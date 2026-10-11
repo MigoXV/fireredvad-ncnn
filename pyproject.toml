@@ -1,0 +1,37 @@
+[project]
+name = "fireredvad-ncnn"
+version = "0.1.0"
+description = "独立部署的 FireRedVAD NCNN CPU 流式推理服务"
+authors = [{name = "migo", email = "1695587905@qq.com"}]
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+  "numpy==1.26.4", "ncnn>=1.0.20240410", "soundfile>=0.13,<0.14",
+  "soxr==0.5.0.post1", "scipy==1.14.1", "kaldiio>=2.18,<3",
+  "kaldi-native-fbank-buffer>=1.22.4,<2", "typer>=0.24.1,<0.25",
+  "grpcio==1.78.0", "grpcio-health-checking==1.78.0", "protobuf>=6.31.1,<7",
+  "pyzmq>=27.1,<28", "msgpack>=1.2.1,<2"
+]
+[tool.poetry]
+packages = [{include = "fireredvad_ncnn", from = "src"}]
+[tool.poetry.scripts]
+fireredvad-ncnn = "fireredvad_ncnn.commands.app:app"
+[dependency-groups]
+dev = ["pytest>=8,<10", "pytest-asyncio>=0.24,<2", "psutil>=6,<8"]
+[tool.poetry.group.export]
+optional = true
+[tool.poetry.group.export.dependencies]
+torch = {version = "2.6.0+cpu", source = "pytorch-cpu"}
+pnnx = ">=20240410"
+safetensors = ">=0.4.5,<1"
+[[tool.poetry.source]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+priority = "explicit"
+[[tool.poetry.source]]
+name = "tuna"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+priority = "primary"
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,1 @@
+{"version":"0.2.0","configurations":[{"name":"NCNN VAD","type":"debugpy","request":"launch","module":"fireredvad_ncnn.commands.app","args":["serve","model-bin/stream-vad"],"envFile":"${workspaceFolder}/.env"}]}
