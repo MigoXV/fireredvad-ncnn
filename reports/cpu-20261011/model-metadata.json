@@ -1,0 +1,68 @@
+{
+  "format_version": 1,
+  "chunk_frames": 10,
+  "feature_dim": 80,
+  "cache_shape": [
+    1,
+    128,
+    19
+  ],
+  "cache_count": 8,
+  "inputs": [
+    "in0",
+    "in1",
+    "in2",
+    "in3",
+    "in4",
+    "in5",
+    "in6",
+    "in7",
+    "in8"
+  ],
+  "outputs": [
+    "out0",
+    "out1",
+    "out2",
+    "out3",
+    "out4",
+    "out5",
+    "out6",
+    "out7",
+    "out8"
+  ],
+  "dtype": "float32",
+  "source_config": {
+    "H": 256,
+    "M": 1,
+    "N1": 20,
+    "N2": 0,
+    "P": 128,
+    "R": 8,
+    "S1": 1,
+    "S2": 1,
+    "architectures": [
+      "FireRedVadStreamModel"
+    ],
+    "dropout": 0.05,
+    "dtype": "float32",
+    "idim": 80,
+    "ignore_index": -1,
+    "label_pad_index": -1,
+    "model_type": "firered-vad-stream",
+    "odim": 1,
+    "transformers_version": "4.57.6",
+    "unk": "<unk>",
+    "use_fp16": 0
+  },
+  "source_sha256": "715b19620ce21e885dc7c3c399231111c761966394ea34f6bb29f1731ed95070",
+  "versions": {
+    "torch": "2.6.0+cpu",
+    "pnnx": "20260526",
+    "ncnn": "1.0.20260526"
+  },
+  "files": {
+    "model.ncnn.param": "162078e309382bf49b21b10f66870780f76d928cf828055a467d1b1037f5dd41",
+    "model.ncnn.bin": "ba757b5f1c1b8fe2f695641a4230ead1544156b7f43d79848af95c368f8a35d8",
+    "cmvn.ark": "c87f6f13edf0f0ec7535ddfc9cc3387d9268cb234b70182d566c5e2edf3ca473"
+  }
+}
