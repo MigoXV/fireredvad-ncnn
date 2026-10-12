@@ -1,0 +1,81 @@
+syntax = "proto3";
+
+import "google/protobuf/duration.proto";
+import "google/protobuf/struct.proto";
+
+option java_multiple_files = true;
+option java_package = "com.ux.vad";
+option java_outer_classname = "UxVadProto";
+
+option go_package = "ulang.com/vad;vad";
+
+package ux_vad;
+
+service UxVoiceActivityDetector {
+
+  rpc Detect(DetectRequest) returns (DetectResponse) {}
+
+  rpc StreamingDetect(stream StreamingDetectRequest)
+      returns (stream StreamingDetectResponse) {}
+}
+
+
+message DetectRequest {
+  DetectionConfig config = 1;
+  bytes audio = 2;
+}
+
+message DetectionConfig {
+  enum AudioEncoding {
+    // Not specified.
+    ENCODING_UNSPECIFIED = 0;
+    // 16位有符号pcm (little-endian)
+    LINEAR16 = 1;
+  }
+
+  // 音频编码
+  AudioEncoding encoding = 1;
+
+  // 采样率
+  uint32 sample_rate_hertz = 2;
+
+  // 请求级后处理配置；未设置时使用引擎默认值。
+  PostprocessingOptions postprocessing = 3;
+
+}
+
+message PostprocessingOptions {
+  // 后处理器的稳定标识，由具体 VAD 引擎解释。
+  string processor = 1;
+
+  // 参数结构版本。
+  uint32 version = 2;
+
+  // 后处理器私有参数。
+  google.protobuf.Struct parameters = 3;
+}
+
+message DetectResponse {
+  repeated DetectionResult results = 1;
+}
+
+message DetectionResult {
+  google.protobuf.Duration start_time = 2;
+  google.protobuf.Duration end_time = 3;
+}
+
+message StreamingDetectRequest {
+  oneof streaming_request {
+    DetectionConfig config = 1;
+    bytes audio_content = 2;
+  }
+}
+
+message StreamingDetectResponse {
+  repeated DetectionResult results = 1;
+  // 最终归属水位 T：根据此前及本条 results，可确定 [0, T) 的有效音/无效音归属，
+  // 后续结果不会修改此前缀。单调不减，不表示累计输入或模型计算进度。
+  // start_time/end_time 均为 -1 时仅通知水位；未覆盖的已确认区间属于无效音。
+  // 正常流结束时水位到达原始输入末尾；失败或取消不保证最终覆盖。
+  google.protobuf.Duration processed_time = 2;
+}

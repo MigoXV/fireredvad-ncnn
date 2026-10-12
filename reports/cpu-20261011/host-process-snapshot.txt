@@ -1,0 +1,12 @@
+    PID %CPU COMMAND
+3064136  100 python
+3064079 36.3 python
+2202352 24.0 codex
+3062644 23.0 python
+3033530 11.7 MainThread
+3058291 10.9 python
+3048092  8.3 MainThread
+3058367  6.2 python
+ 758329  2.9 codex
+3034932  2.5 codex
+3034278  1.6 MainThread
