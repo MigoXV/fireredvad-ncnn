@@ -1,0 +1,23 @@
+2026-10-13 08:27:16 - MainProcess - fireredvad_ncnn.engine.process - INFO - Engine worker spawned: pid=1547638 endpoint=ipc:///tmp/fireredvad-1547601-df684a2746134d79999dc6183221fad9.sock
+2026-10-13 08:27:16 - fireredvad-engine - fireredvad_ncnn.engine.worker - INFO - Engine worker ready: pid=1547638 generation=b238e125c20342b48ba86be45cfbc0c7 native=fireredvad=0.1.0;abi=1;ncnn=20260526;fbank=b09e686;soxr=945b592;cpu=fp32 workers=1 threads=4 endpoint=ipc:///tmp/fireredvad-1547601-df684a2746134d79999dc6183221fad9.sock
+2026-10-13 08:27:16 - MainProcess - __main__ - INFO - FireRedVAD ready: address=127.0.0.1:50409 worker_pid=1547638 generation=b238e125c20342b48ba86be45cfbc0c7 device=cpu dtype=fp32 runner=ncnn batch=32 wait_ms=5.0
+2026-10-13 08:27:26 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:26 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:26 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:26 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:26 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:26 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:26 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:26 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:26 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:26 - fireredvad-engine - fireredvad_ncnn.engine.worker - INFO - engine_metrics={"canceled": 0, "completed": 471, "expired": 0, "inference_ns": 513256564, "inflight_bytes": 5622080, "ipc_pending": 8, "model_blocks": 462, "pending": 8, "postprocess_ns": 319516, "preprocess_ns": 78360906, "queue_high_water": 8, "rejected": 0, "response_bytes": 0, "response_pending": 0, "sessions": 4, "submitted": 479}
+2026-10-13 08:27:27 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:27 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:27 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:27 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:27 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:27 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:27 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:27 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:28 - fireredvad-engine - fireredvad_ncnn.engine.worker - INFO - engine_metrics_final={"canceled": 0, "completed": 1317, "expired": 0, "inference_ns": 1376120059, "inflight_bytes": 0, "model_blocks": 1300, "pending": 0, "postprocess_ns": 891216, "preprocess_ns": 221656913, "queue_high_water": 8, "rejected": 0, "sessions": 0, "submitted": 1317}
+2026-10-13 08:27:28 - MainProcess - fireredvad_ncnn.engine.process - INFO - Engine worker stopped: exitcode=0

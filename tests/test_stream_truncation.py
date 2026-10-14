@@ -4,9 +4,9 @@ from types import SimpleNamespace
 
 import numpy as np
 
-from fireredvad_ncnn.inferencers.inferencer import Inferencer
+from tests.reference.inferencer import Inferencer
 from fireredvad_ncnn.models.constants import SAMPLE_RATE
-from fireredvad_ncnn.utils.audio_stream import AudioStreamResampler
+from tests.reference.audio_stream import AudioStreamResampler
 
 
 class _Resettable:

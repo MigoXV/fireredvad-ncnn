@@ -1,0 +1,29 @@
+include(CMakeFindDependencyMacro)
+find_dependency(Threads)
+get_filename_component(_frv_prefix "${CMAKE_CURRENT_LIST_DIR}/../../.." ABSOLUTE)
+set(_frv_lib "${_frv_prefix}/@CMAKE_INSTALL_LIBDIR@")
+if(EXISTS "${_frv_lib}/libfireredvad.so" AND NOT TARGET FireRedVAD::shared)
+  add_library(FireRedVAD::shared SHARED IMPORTED)
+  set_target_properties(FireRedVAD::shared PROPERTIES IMPORTED_LOCATION "${_frv_lib}/libfireredvad.so" INTERFACE_INCLUDE_DIRECTORIES "${_frv_prefix}/@CMAKE_INSTALL_INCLUDEDIR@")
+endif()
+if(EXISTS "${_frv_lib}/libfireredvad.a" AND NOT TARGET FireRedVAD::static)
+  if(CMAKE_CXX_COMPILER_LOADED)
+    find_package(OpenMP QUIET COMPONENTS CXX)
+    set(_frv_runtime OpenMP::OpenMP_CXX)
+    set(_frv_language CXX)
+  else()
+    find_package(OpenMP QUIET COMPONENTS C)
+    set(_frv_runtime OpenMP::OpenMP_C stdc++)
+    set(_frv_language C)
+  endif()
+  if(NOT OpenMP_FOUND)
+    # Shared-only consumers need the runtime, not OpenMP compiler support.
+    return()
+  endif()
+  add_library(FireRedVAD::static STATIC IMPORTED)
+  set_target_properties(FireRedVAD::static PROPERTIES
+    IMPORTED_LOCATION "${_frv_lib}/libfireredvad.a"
+    INTERFACE_INCLUDE_DIRECTORIES "${_frv_prefix}/@CMAKE_INSTALL_INCLUDEDIR@"
+    INTERFACE_LINK_LIBRARIES "${_frv_lib}/@FRV_NCNN_FILENAME@;${_frv_lib}/@FRV_FBANK_FILENAME@;${_frv_lib}/libfrv_kissfft.a;${_frv_lib}/@FRV_SOXR_FILENAME@;Threads::Threads;${_frv_runtime};m"
+    IMPORTED_LINK_INTERFACE_LANGUAGES ${_frv_language})
+endif()

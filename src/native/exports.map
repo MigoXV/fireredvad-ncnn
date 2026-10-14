@@ -1,0 +1,1 @@
+FIREREDVAD_1 { global: frv_*; local: *; };

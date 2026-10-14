@@ -10,7 +10,7 @@ from fireredvad_ncnn.engine.protocol import (
     FailedPreconditionError, ResourceExhaustedError, Operation, Status,
     pack_metadata, unpack_metadata,
 )
-from fireredvad_ncnn.engine.worker import (
+from tests.reference.worker import (
     _Metrics, _Request, _Session, _Work, _enqueue_stream_request,
     _drop_expired_or_canceled, _receive_and_dispatch,
 )

@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-13",
+  "pytest": {"passed": 174, "skipped": 2, "failed": 0, "all_chunk_sizes": true},
+  "native_ctest": {"passed": 1, "failed": 0},
+  "arm64_qemu_numeric": {"passed": 3, "failed": 0},
+  "arm64_hardware_validated": false,
+  "native_ci_executed": false,
+  "installed_x86_64_wheel_smoke": "passed",
+  "pure_c_shared_consumer": "passed",
+  "pure_c_static_consumer": "passed",
+  "arm64_static_soxr_relink_cli": "passed",
+  "benchmark_formal_rounds": 45,
+  "benchmark_errors": 0,
+  "default_throughput_min_ratio": 0.9,
+  "default_p95_max_ratio": 1.1,
+  "default_gate_passed_levels": [1, 4, 8, 16, 32],
+  "native_instances_clean_metrics": 10,
+  "host_exclusive": false,
+  "discarded_trial": "build/perf-trial-20261013"
+}

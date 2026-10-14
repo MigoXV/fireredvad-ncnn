@@ -1,3 +1,4 @@
+"""Historical postprocessor oracle; production runs the C++ state machine."""
 # Copyright 2026 Xiaohongshu. (Author: Kaituo Xu, Wenpeng Li, Kai Huang, Kun Liu)
 
 import enum

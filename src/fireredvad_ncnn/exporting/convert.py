@@ -59,9 +59,11 @@ def export_model(source: Path, output: Path, chunk_frames: int = 10):
         "inputs": [f"in{i}" for i in range(9)], "outputs": [f"out{i}" for i in range(9)],
         "dtype": "float32", "source_config": config,
         "source_sha256": hashlib.sha256((source / "model.safetensors").read_bytes()).hexdigest(),
-        "versions": {name: version(name) for name in ["torch", "pnnx", "ncnn"]},
+        "versions": {name: version(name) for name in ["torch", "pnnx"]},
         "files": {name: hashlib.sha256((output / name).read_bytes()).hexdigest()
                   for name in ["model.ncnn.param", "model.ncnn.bin", "cmvn.ark"]},
     }
+    from fireredvad_ncnn.native import _load_library
+    metadata["versions"]["native_engine"] = _load_library().frv_build_info().decode()
     (output / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
     return metadata

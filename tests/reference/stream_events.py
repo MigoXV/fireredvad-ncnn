@@ -1,3 +1,4 @@
+"""Historical publisher oracle; production publishes from the native session."""
 from collections.abc import Iterable, Iterator
 from dataclasses import dataclass
 

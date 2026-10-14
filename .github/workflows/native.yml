@@ -1,0 +1,35 @@
+name: Native engine
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  native:
+    strategy:
+      matrix:
+        include:
+          - runner: ubuntu-24.04
+            arch: x86_64
+          - runner: ubuntu-24.04-arm
+            arch: arm64
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: pipx install poetry
+      - run: poetry install --with export
+      - run: cmake -S . -B build/${{ matrix.arch }} -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_LIBDIR=lib -DFRV_WHEEL_LIB_DIR=${{ github.workspace }}/src/fireredvad_ncnn/lib
+      - run: cmake --build build/${{ matrix.arch }} -j 2
+      - run: ctest --test-dir build/${{ matrix.arch }} --output-on-failure
+      - run: bash scripts/prepare_test_model.sh
+      - run: poetry run pytest -q
+        env:
+          VAD_REFERENCE_MODEL: model-bin/source
+          NCNN_NUMERICAL_PROBE: build/${{ matrix.arch }}/frv_numerical_probe
+          NCNN_TEST_ALL_CHUNKS: '1'
+      - run: build/${{ matrix.arch }}/frv_c_example model-bin/stream-vad
+      - run: build/${{ matrix.arch }}/fireredvad infer model-bin/stream-vad model-bin/speech.wav
+      - run: poetry run python -m build --wheel
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fireredvad-${{ matrix.arch }}
+          path: dist/*.whl

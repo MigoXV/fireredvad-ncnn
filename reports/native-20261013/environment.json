@@ -1,0 +1,938 @@
+{
+  "revision": "cfb1876d3a0a7071ae3e916652764010e3d4b4a8",
+  "worktree": " M .gitignore\n M NOTICE.md\n M README.md\n M poetry.lock\n M pyproject.toml\n M src/fireredvad_ncnn/benchmark.py\n M src/fireredvad_ncnn/commands/app.py\n M src/fireredvad_ncnn/configs/runtime_config.py\n M src/fireredvad_ncnn/engine/worker.py\n M src/fireredvad_ncnn/exporting/convert.py\n M src/fireredvad_ncnn/inferencers/inferencer.py\n D src/fireredvad_ncnn/inferencers/model_runtime.py\n D src/fireredvad_ncnn/inferencers/stream_events.py\n D src/fireredvad_ncnn/models/audio_feat.py\n D src/fireredvad_ncnn/models/stream_vad_postprocessor.py\n D src/fireredvad_ncnn/utils/audio_stream.py\n M tests/test_audio_feat_buffer.py\n M tests/test_engine_limits.py\n M tests/test_engine_scheduler.py\n M tests/test_postprocessing_config.py\n M tests/test_runtime.py\n M tests/test_service_integration.py\n M tests/test_stream_truncation.py\n M tests/test_stream_watermark.py\n?? .clang-format\n?? .github/\n?? CMakeLists.txt\n?? CMakePresets.json\n?? native/\n?? native_build.py\n?? scripts/\n?? src/fireredvad_ncnn/native.py\n?? tests/reference/\n?? tests/test_native_engine.py\n",
+  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.41",
+  "server_cpus": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "client_cpus": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "cpu_model": "Intel(R) Xeon(R) Gold 6326 CPU @ 2.90GHz",
+  "native_build": "fireredvad=0.1.0;abi=1;ncnn=20260526;fbank=b09e686;soxr=945b592;cpu=fp32",
+  "model_metadata": {
+    "format_version": 1,
+    "chunk_frames": 10,
+    "feature_dim": 80,
+    "cache_shape": [
+      1,
+      128,
+      19
+    ],
+    "cache_count": 8,
+    "inputs": [
+      "in0",
+      "in1",
+      "in2",
+      "in3",
+      "in4",
+      "in5",
+      "in6",
+      "in7",
+      "in8"
+    ],
+    "outputs": [
+      "out0",
+      "out1",
+      "out2",
+      "out3",
+      "out4",
+      "out5",
+      "out6",
+      "out7",
+      "out8"
+    ],
+    "dtype": "float32",
+    "source_config": {
+      "H": 256,
+      "M": 1,
+      "N1": 20,
+      "N2": 0,
+      "P": 128,
+      "R": 8,
+      "S1": 1,
+      "S2": 1,
+      "architectures": [
+        "FireRedVadStreamModel"
+      ],
+      "dropout": 0.05,
+      "dtype": "float32",
+      "idim": 80,
+      "ignore_index": -1,
+      "label_pad_index": -1,
+      "model_type": "firered-vad-stream",
+      "odim": 1,
+      "transformers_version": "4.57.6",
+      "unk": "<unk>",
+      "use_fp16": 0
+    },
+    "source_sha256": "715b19620ce21e885dc7c3c399231111c761966394ea34f6bb29f1731ed95070",
+    "versions": {
+      "torch": "2.6.0+cpu",
+      "pnnx": "20260526",
+      "ncnn": "1.0.20260526"
+    },
+    "files": {
+      "model.ncnn.param": "162078e309382bf49b21b10f66870780f76d928cf828055a467d1b1037f5dd41",
+      "model.ncnn.bin": "ba757b5f1c1b8fe2f695641a4230ead1544156b7f43d79848af95c368f8a35d8",
+      "cmvn.ark": "c87f6f13edf0f0ec7535ddfc9cc3387d9268cb234b70182d566c5e2edf3ca473"
+    }
+  },
+  "duration_s": 10,
+  "rounds": 3,
+  "wav_sha256": "92d353353bf8955d8561d813ac0920adcabfbf6c67aa65369df44b4f86989e24",
+  "process_snapshot": [
+    {
+      "pid": 1,
+      "name": "bash"
+    },
+    {
+      "pid": 156,
+      "name": "sh"
+    },
+    {
+      "pid": 176,
+      "name": "MainThread"
+    },
+    {
+      "pid": 266,
+      "name": "sh"
+    },
+    {
+      "pid": 275,
+      "name": "MainThread"
+    },
+    {
+      "pid": 363,
+      "name": "MainThread"
+    },
+    {
+      "pid": 404,
+      "name": "MainThread"
+    },
+    {
+      "pid": 8532,
+      "name": "MainThread"
+    },
+    {
+      "pid": 10418,
+      "name": "sh"
+    },
+    {
+      "pid": 10514,
+      "name": "MainThread"
+    },
+    {
+      "pid": 25316,
+      "name": "sh"
+    },
+    {
+      "pid": 25398,
+      "name": "MainThread"
+    },
+    {
+      "pid": 29667,
+      "name": "sh"
+    },
+    {
+      "pid": 29769,
+      "name": "MainThread"
+    },
+    {
+      "pid": 33563,
+      "name": "sh"
+    },
+    {
+      "pid": 33656,
+      "name": "MainThread"
+    },
+    {
+      "pid": 121698,
+      "name": "sh"
+    },
+    {
+      "pid": 121785,
+      "name": "MainThread"
+    },
+    {
+      "pid": 171003,
+      "name": "bash"
+    },
+    {
+      "pid": 248067,
+      "name": "sh"
+    },
+    {
+      "pid": 248160,
+      "name": "MainThread"
+    },
+    {
+      "pid": 248939,
+      "name": "sh"
+    },
+    {
+      "pid": 249027,
+      "name": "MainThread"
+    },
+    {
+      "pid": 495448,
+      "name": "sh"
+    },
+    {
+      "pid": 495546,
+      "name": "MainThread"
+    },
+    {
+      "pid": 504518,
+      "name": "bash"
+    },
+    {
+      "pid": 522696,
+      "name": "bash"
+    },
+    {
+      "pid": 763467,
+      "name": "codex"
+    },
+    {
+      "pid": 1098865,
+      "name": "codex-code-mode-host"
+    },
+    {
+      "pid": 1131762,
+      "name": "sh"
+    },
+    {
+      "pid": 1131890,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1135116,
+      "name": "sh"
+    },
+    {
+      "pid": 1135221,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1181911,
+      "name": "sh"
+    },
+    {
+      "pid": 1182011,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1300474,
+      "name": "sh"
+    },
+    {
+      "pid": 1300581,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1301939,
+      "name": "sh"
+    },
+    {
+      "pid": 1302147,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1307531,
+      "name": "sh"
+    },
+    {
+      "pid": 1307729,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1309721,
+      "name": "sh"
+    },
+    {
+      "pid": 1309845,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1311135,
+      "name": "bash"
+    },
+    {
+      "pid": 1316646,
+      "name": "codex"
+    },
+    {
+      "pid": 1339902,
+      "name": "sh"
+    },
+    {
+      "pid": 1340022,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1345377,
+      "name": "sh"
+    },
+    {
+      "pid": 1345490,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1347295,
+      "name": "bash"
+    },
+    {
+      "pid": 1347861,
+      "name": "sh"
+    },
+    {
+      "pid": 1347868,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1347992,
+      "name": "sh"
+    },
+    {
+      "pid": 1347999,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1348012,
+      "name": "sh"
+    },
+    {
+      "pid": 1348019,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1348035,
+      "name": "sh"
+    },
+    {
+      "pid": 1348042,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1348056,
+      "name": "sh"
+    },
+    {
+      "pid": 1348063,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1348080,
+      "name": "sh"
+    },
+    {
+      "pid": 1348087,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1348258,
+      "name": "sh"
+    },
+    {
+      "pid": 1348265,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1350040,
+      "name": "sh"
+    },
+    {
+      "pid": 1350118,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1352067,
+      "name": "bash"
+    },
+    {
+      "pid": 1428410,
+      "name": "bash"
+    },
+    {
+      "pid": 1438240,
+      "name": "sh"
+    },
+    {
+      "pid": 1438322,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1457717,
+      "name": "sh"
+    },
+    {
+      "pid": 1457803,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1461410,
+      "name": "sh"
+    },
+    {
+      "pid": 1461496,
+      "name": "sh"
+    },
+    {
+      "pid": 1461580,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1462996,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1463037,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1463049,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1463060,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1463183,
+      "name": "codex"
+    },
+    {
+      "pid": 1463372,
+      "name": "bash"
+    },
+    {
+      "pid": 1463510,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1466721,
+      "name": "bash"
+    },
+    {
+      "pid": 1467120,
+      "name": "bash"
+    },
+    {
+      "pid": 1467293,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1467305,
+      "name": "codex"
+    },
+    {
+      "pid": 1528216,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1528632,
+      "name": "sh"
+    },
+    {
+      "pid": 1528859,
+      "name": "sh"
+    },
+    {
+      "pid": 1528873,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1530605,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1530624,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1530636,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1530643,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1530795,
+      "name": "codex"
+    },
+    {
+      "pid": 1530901,
+      "name": "bash"
+    },
+    {
+      "pid": 1530922,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1530923,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1530936,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1530971,
+      "name": "pet"
+    },
+    {
+      "pid": 1531258,
+      "name": "bash"
+    },
+    {
+      "pid": 1531312,
+      "name": "MainThread"
+    },
+    {
+      "pid": 1545260,
+      "name": "sh"
+    },
+    {
+      "pid": 1545261,
+      "name": "sh"
+    },
+    {
+      "pid": 1545640,
+      "name": "sh"
+    },
+    {
+      "pid": 1545646,
+      "name": "sh"
+    },
+    {
+      "pid": 1546182,
+      "name": "bash"
+    },
+    {
+      "pid": 1546248,
+      "name": "python"
+    },
+    {
+      "pid": 1546252,
+      "name": "sleep"
+    },
+    {
+      "pid": 1546256,
+      "name": "sleep"
+    },
+    {
+      "pid": 1546261,
+      "name": "sleep"
+    },
+    {
+      "pid": 1546265,
+      "name": "sleep"
+    },
+    {
+      "pid": 2743006,
+      "name": "sh"
+    },
+    {
+      "pid": 2743013,
+      "name": "MainThread"
+    },
+    {
+      "pid": 2743193,
+      "name": "sh"
+    },
+    {
+      "pid": 2743282,
+      "name": "MainThread"
+    },
+    {
+      "pid": 2744408,
+      "name": "bash"
+    },
+    {
+      "pid": 2872840,
+      "name": "sh"
+    },
+    {
+      "pid": 2872847,
+      "name": "MainThread"
+    },
+    {
+      "pid": 2872858,
+      "name": "sh"
+    },
+    {
+      "pid": 2872865,
+      "name": "MainThread"
+    },
+    {
+      "pid": 2872878,
+      "name": "sh"
+    },
+    {
+      "pid": 2872885,
+      "name": "MainThread"
+    },
+    {
+      "pid": 2872896,
+      "name": "sh"
+    },
+    {
+      "pid": 2872903,
+      "name": "MainThread"
+    },
+    {
+      "pid": 2872916,
+      "name": "sh"
+    },
+    {
+      "pid": 2872923,
+      "name": "MainThread"
+    },
+    {
+      "pid": 2872936,
+      "name": "sh"
+    },
+    {
+      "pid": 2872943,
+      "name": "MainThread"
+    },
+    {
+      "pid": 2872957,
+      "name": "sh"
+    },
+    {
+      "pid": 2872964,
+      "name": "MainThread"
+    },
+    {
+      "pid": 2891605,
+      "name": "sh"
+    },
+    {
+      "pid": 2891712,
+      "name": "MainThread"
+    },
+    {
+      "pid": 2892822,
+      "name": "bash"
+    },
+    {
+      "pid": 2895654,
+      "name": "sh"
+    },
+    {
+      "pid": 2895661,
+      "name": "MainThread"
+    },
+    {
+      "pid": 2895771,
+      "name": "sh"
+    },
+    {
+      "pid": 2895778,
+      "name": "MainThread"
+    },
+    {
+      "pid": 2895791,
+      "name": "sh"
+    },
+    {
+      "pid": 2895798,
+      "name": "MainThread"
+    },
+    {
+      "pid": 2895809,
+      "name": "sh"
+    },
+    {
+      "pid": 2895816,
+      "name": "MainThread"
+    },
+    {
+      "pid": 2895829,
+      "name": "sh"
+    },
+    {
+      "pid": 2895836,
+      "name": "MainThread"
+    },
+    {
+      "pid": 2895849,
+      "name": "sh"
+    },
+    {
+      "pid": 2895856,
+      "name": "MainThread"
+    },
+    {
+      "pid": 2895867,
+      "name": "sh"
+    },
+    {
+      "pid": 2895874,
+      "name": "MainThread"
+    },
+    {
+      "pid": 3101103,
+      "name": "sh"
+    },
+    {
+      "pid": 3101194,
+      "name": "MainThread"
+    },
+    {
+      "pid": 3102457,
+      "name": "bash"
+    },
+    {
+      "pid": 3199379,
+      "name": "sh"
+    },
+    {
+      "pid": 3199460,
+      "name": "MainThread"
+    },
+    {
+      "pid": 3200617,
+      "name": "bash"
+    },
+    {
+      "pid": 3304996,
+      "name": "sh"
+    },
+    {
+      "pid": 3305085,
+      "name": "MainThread"
+    },
+    {
+      "pid": 3351094,
+      "name": "sh"
+    },
+    {
+      "pid": 3351210,
+      "name": "MainThread"
+    },
+    {
+      "pid": 3359453,
+      "name": "sh"
+    },
+    {
+      "pid": 3359573,
+      "name": "MainThread"
+    },
+    {
+      "pid": 3360783,
+      "name": "bash"
+    },
+    {
+      "pid": 3362432,
+      "name": "bash"
+    },
+    {
+      "pid": 3370084,
+      "name": "python"
+    },
+    {
+      "pid": 3370100,
+      "name": "python"
+    },
+    {
+      "pid": 3370233,
+      "name": "python"
+    },
+    {
+      "pid": 3370329,
+      "name": "python"
+    },
+    {
+      "pid": 3370331,
+      "name": "python"
+    },
+    {
+      "pid": 3370333,
+      "name": "python"
+    },
+    {
+      "pid": 3370335,
+      "name": "python"
+    },
+    {
+      "pid": 3370337,
+      "name": "python"
+    },
+    {
+      "pid": 3370339,
+      "name": "python"
+    },
+    {
+      "pid": 3370341,
+      "name": "python"
+    },
+    {
+      "pid": 3370343,
+      "name": "python"
+    },
+    {
+      "pid": 3370345,
+      "name": "python"
+    },
+    {
+      "pid": 3370347,
+      "name": "python"
+    },
+    {
+      "pid": 3370349,
+      "name": "python"
+    },
+    {
+      "pid": 3370351,
+      "name": "python"
+    },
+    {
+      "pid": 3370353,
+      "name": "python"
+    },
+    {
+      "pid": 3370355,
+      "name": "python"
+    },
+    {
+      "pid": 3370357,
+      "name": "python"
+    },
+    {
+      "pid": 3370359,
+      "name": "python"
+    },
+    {
+      "pid": 3370361,
+      "name": "python"
+    },
+    {
+      "pid": 3370363,
+      "name": "python"
+    },
+    {
+      "pid": 3370365,
+      "name": "python"
+    },
+    {
+      "pid": 3370367,
+      "name": "python"
+    },
+    {
+      "pid": 3370369,
+      "name": "python"
+    },
+    {
+      "pid": 3370371,
+      "name": "python"
+    },
+    {
+      "pid": 3370373,
+      "name": "python"
+    },
+    {
+      "pid": 3370375,
+      "name": "python"
+    },
+    {
+      "pid": 3370377,
+      "name": "python"
+    },
+    {
+      "pid": 3370380,
+      "name": "python"
+    },
+    {
+      "pid": 3370382,
+      "name": "python"
+    },
+    {
+      "pid": 3370386,
+      "name": "python"
+    },
+    {
+      "pid": 3370388,
+      "name": "python"
+    },
+    {
+      "pid": 3370390,
+      "name": "python"
+    },
+    {
+      "pid": 3370392,
+      "name": "python"
+    },
+    {
+      "pid": 3370394,
+      "name": "python"
+    },
+    {
+      "pid": 3370949,
+      "name": "bash"
+    },
+    {
+      "pid": 3372613,
+      "name": "bash"
+    },
+    {
+      "pid": 4105252,
+      "name": "bash"
+    },
+    {
+      "pid": 4106923,
+      "name": "sh"
+    },
+    {
+      "pid": 4107020,
+      "name": "MainThread"
+    },
+    {
+      "pid": 4112631,
+      "name": "sh"
+    },
+    {
+      "pid": 4112745,
+      "name": "MainThread"
+    },
+    {
+      "pid": 4114605,
+      "name": "bash"
+    },
+    {
+      "pid": 4149790,
+      "name": "bash"
+    },
+    {
+      "pid": 4160188,
+      "name": "bash"
+    },
+    {
+      "pid": 4160958,
+      "name": "MainThread"
+    },
+    {
+      "pid": 4160970,
+      "name": "codex"
+    },
+    {
+      "pid": 4161189,
+      "name": "codex"
+    },
+    {
+      "pid": 4161345,
+      "name": "codex"
+    }
+  ],
+  "acceptance": "default native throughput >= 90% baseline; default native P95 <= 110% baseline",
+  "isolation": "unique ports/process groups and disjoint server/client affinity; no host exclusivity guarantee"
+}

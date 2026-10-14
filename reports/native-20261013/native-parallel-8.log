@@ -1,0 +1,38 @@
+2026-10-13 08:27:53 - MainProcess - fireredvad_ncnn.engine.process - INFO - Engine worker spawned: pid=1549411 endpoint=ipc:///tmp/fireredvad-1549381-a24affd69cdb40769500f7f09e053b94.sock
+2026-10-13 08:27:54 - fireredvad-engine - fireredvad_ncnn.engine.worker - INFO - Engine worker ready: pid=1549411 generation=111d4f170c6d48e0b39016fbd7a07f2d native=fireredvad=0.1.0;abi=1;ncnn=20260526;fbank=b09e686;soxr=945b592;cpu=fp32 workers=4 threads=1 endpoint=ipc:///tmp/fireredvad-1549381-a24affd69cdb40769500f7f09e053b94.sock
+2026-10-13 08:27:54 - MainProcess - __main__ - INFO - FireRedVAD ready: address=127.0.0.1:51387 worker_pid=1549411 generation=111d4f170c6d48e0b39016fbd7a07f2d device=cpu dtype=fp32 runner=ncnn batch=32 wait_ms=5.0
+2026-10-13 08:27:58 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:58 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:58 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:58 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:58 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:58 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:58 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:58 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:58 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:58 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:58 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:58 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:58 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:58 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:58 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:58 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:58 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:59 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:59 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:59 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:59 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:59 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:59 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:59 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:59 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:59 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:59 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:59 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:59 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:59 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:59 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:59 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:59 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:27:59 - fireredvad-engine - fireredvad_ncnn.engine.worker - INFO - engine_metrics_final={"canceled": 0, "completed": 2613, "expired": 0, "inference_ns": 2404140593, "inflight_bytes": 0, "model_blocks": 2580, "pending": 0, "postprocess_ns": 1739246, "preprocess_ns": 397850704, "queue_high_water": 16, "rejected": 0, "sessions": 0, "submitted": 2613}
+2026-10-13 08:27:59 - MainProcess - fireredvad_ncnn.engine.process - INFO - Engine worker stopped: exitcode=0
