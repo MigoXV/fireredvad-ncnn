@@ -4,10 +4,10 @@ import os
 import numpy as np
 import pytest
 
-from fireredvad_ncnn.inferencers.model_runtime import VadModelRuntime
+from tests.reference.model_runtime import VadModelRuntime
 
 MODEL = Path(os.environ.get("NCNN_TEST_MODEL", "model-bin/stream-vad"))
-SOURCE = Path(os.environ.get("VAD_REFERENCE_MODEL", "/workspace/opusi/fireredvad/model-bin/MigoXV/firered-vad-stream"))
+SOURCE = Path(os.environ.get("VAD_REFERENCE_MODEL", "/workspace/opusi/fireredvad/model-bin/MigoXV/firered-vad-stream")).resolve()
 
 
 @pytest.fixture
@@ -66,7 +66,7 @@ def test_real_audio_probabilities_and_cache_alignment(runtime):
     torch = pytest.importorskip("torch")
     sf = pytest.importorskip("soundfile")
     from fireredvad_ncnn.exporting.convert import load_reference
-    from fireredvad_ncnn.models.audio_feat import AudioFeat
+    from tests.reference.audio_feat import AudioFeat
     audio_dir = SOURCE.parents[2] / "data-bin/0713"
     if not SOURCE.exists() or not audio_dir.exists():
         pytest.skip("Local reference audio required")

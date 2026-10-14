@@ -214,7 +214,7 @@ def benchmark(model_path, reference_project, reference_model, wav_dir, output):
     environment = {"server_cpus": server_cpus, "client_cpus": client_cpus, "compute_threads": 4, "session_queue_capacity": 2,
                    "audio_paths": paths, "audio_sha256": hashlib.sha256(audio).hexdigest(),
                    "duration_s": 10, "preparation": "resample to 16kHz with soxr before timing", "chunk_ms": 100, "min_silence_frame": 20, "batch_wait_ms": 5,
-                   "versions": {k: version(k) for k in ["ncnn", "numpy", "grpcio"]},
+                   "versions": {k: version(k) for k in ["numpy", "grpcio"]},
                    "cpu": subprocess.check_output(["lscpu"], text=True),
                    "revision": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
                    "reference_revision": subprocess.check_output(["git", "-C", str(reference_project), "rev-parse", "HEAD"], text=True).strip()}

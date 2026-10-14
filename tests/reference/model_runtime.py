@@ -1,4 +1,4 @@
-"""NCNN CPU runtime. Session state is explicit and committed by the engine."""
+"""Pre-migration NCNN Python runtime oracle; test-only dependency."""
 from __future__ import annotations
 
 import hashlib

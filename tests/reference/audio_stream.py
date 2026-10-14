@@ -1,3 +1,4 @@
+"""Pre-migration streaming resampling oracle."""
 from __future__ import annotations
 
 from collections.abc import Generator, Iterable

@@ -1,0 +1,10 @@
+2026-10-13 08:26:45 - MainProcess - fireredvad_ncnn.engine.process - INFO - Engine worker spawned: pid=1546362 endpoint=ipc:///tmp/fireredvad-1546332-b45971b062d147ee95a5aeb70b3f6d74.sock
+2026-10-13 08:26:46 - fireredvad-engine - tests.reference.worker - INFO - Engine worker ready: pid=1546362 generation=1b340f6641cd4cf78f3283c120d6da67 device=cpu dtype=fp32 runner=ncnn endpoint=ipc:///tmp/fireredvad-1546332-b45971b062d147ee95a5aeb70b3f6d74.sock
+2026-10-13 08:26:46 - MainProcess - fireredvad_ncnn.commands.app - INFO - FireRedVAD ready: address=127.0.0.1:40915 worker_pid=1546362 generation=1b340f6641cd4cf78f3283c120d6da67 device=cpu dtype=fp32 runner=ncnn batch=32 wait_ms=5.0
+2026-10-13 08:26:55 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:26:55 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:26:55 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:26:55 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:26:56 - MainProcess - fireredvad_ncnn.servicer.servicer - INFO - rpc_request method=StreamingDetect
+2026-10-13 08:26:56 - fireredvad-engine - tests.reference.worker - INFO - engine_metrics={"batch_histogram": {"1": 240}, "cache_arena": null, "counters": {"device_batches": 240, "device_items": 240, "device_ms": 158, "stream_chunk": 244, "stream_close": 4, "stream_open": 5}, "queue_high_water": 1, "ready": 0, "sessions": 1}
+2026-10-13 08:26:56 - MainProcess - fireredvad_ncnn.engine.process - INFO - Engine worker stopped: exitcode=0

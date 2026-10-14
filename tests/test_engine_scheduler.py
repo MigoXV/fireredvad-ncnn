@@ -8,7 +8,7 @@ from types import SimpleNamespace
 import numpy as np
 
 from fireredvad_ncnn.configs.engine_config import EngineConfig
-from fireredvad_ncnn.engine.worker import (
+from tests.reference.worker import (
     _Metrics,
     _Request,
     _Session,
@@ -161,7 +161,7 @@ def test_periodic_metrics_are_logged_at_info(caplog) -> None:
     metrics = _Metrics()
     metrics.last_log = 0.0
 
-    with caplog.at_level(logging.DEBUG, logger="fireredvad_ncnn.engine.worker"):
+    with caplog.at_level(logging.DEBUG, logger="tests.reference.worker"):
         metrics.log_if_due(EngineConfig(), ready=0, sessions=0)
 
     record = next(

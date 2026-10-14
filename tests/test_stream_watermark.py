@@ -8,11 +8,11 @@ import pytest
 import numpy as np
 
 from fireredvad_ncnn.configs.stream_vad_config import FireRedStreamVadConfig
-from fireredvad_ncnn.engine.worker import _Session, _filter_stream_events
-from fireredvad_ncnn.inferencers.inferencer import Inferencer, PreparedStreamRequest, _StreamState
-from fireredvad_ncnn.inferencers.stream_events import StreamEventPublisher
-from fireredvad_ncnn.models.audio_feat import KaldifeatFbank
-from fireredvad_ncnn.models.stream_vad_postprocessor import StreamVadPostprocessor
+from tests.reference.worker import _Session, _filter_stream_events
+from tests.reference.inferencer import Inferencer, PreparedStreamRequest, _StreamState
+from tests.reference.stream_events import StreamEventPublisher
+from tests.reference.audio_feat import KaldifeatFbank
+from tests.reference.stream_vad_postprocessor import StreamVadPostprocessor
 from fireredvad_ncnn.servicer.servicer import _events_to_responses
 from tests.streaming_test_utils import assert_confirmed_prefixes
 

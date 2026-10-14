@@ -6,7 +6,7 @@ import kaldi_native_fbank as knf
 import numpy as np
 import pytest
 
-from fireredvad_ncnn.models.audio_feat import KaldifeatFbank
+from tests.reference.audio_feat import KaldifeatFbank
 
 
 SAMPLE_RATE = 16000

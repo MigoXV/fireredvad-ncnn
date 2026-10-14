@@ -37,16 +37,18 @@ def serve(
         "--batch-size",
         envvar="BATCH_SIZE",
         min=1,
-        help="Engine 动态批处理上限。",
+        help="旧动态组批兼容参数；原生引擎按块公平调度。",
     ),
     batch_wait_ms: float = typer.Option(
         5.0,
         "--batch-wait-ms",
         envvar="BATCH_WAIT_MS",
         min=0.0,
-        help="动态组批最大等待时间（毫秒）。",
+        help="旧组批等待兼容参数；原生引擎不等待凑批。",
     ),
-    num_threads: int = typer.Option(4, min=1, envvar="NCNN_NUM_THREADS"),
+    num_threads: int = typer.Option(4, min=1, envvar="NCNN_NUM_THREADS", help="原生计算 CPU 线程预算。"),
+    engine_workers: int = typer.Option(1, min=1, envvar="ENGINE_WORKERS", help="原生并行会话 worker 数。"),
+    threads_per_worker: int | None = typer.Option(None, min=1, envvar="NCNN_THREADS_PER_WORKER", help="每 worker NCNN 线程数，默认预算除以 worker 数。"),
     stream_chunk_frame: int = typer.Option(
         10,
         "--stream-chunk-frame",
@@ -155,7 +157,7 @@ def serve(
     ),
     log_level: str = typer.Option("INFO", "--log-level", envvar="LOG_LEVEL"),
 ) -> None:
-    """启动单 Worker 的 NCNN CPU 异步 VAD 服务。"""
+    """启动独立原生引擎进程与 Python 异步 gRPC 服务。"""
     try:
         logging_level = getattr(logging, log_level.upper(), None)
         if logging_level is None:
@@ -163,6 +165,7 @@ def serve(
         runtime_config = RuntimeConfig(
             device=device, dtype=dtype, runner_name=runner,
             num_threads=num_threads, stream_chunk_frame=stream_chunk_frame,
+            worker_count=engine_workers, threads_per_worker=threads_per_worker,
         )
         serving_config = ServingConfig(
             host=host,

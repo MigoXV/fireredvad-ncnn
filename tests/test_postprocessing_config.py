@@ -9,7 +9,7 @@ from fireredvad_ncnn.configs.stream_vad_config import (
     resolve_postprocessing_config,
 )
 from fireredvad_ncnn.configs.engine_config import EngineConfig
-from fireredvad_ncnn.inferencers.inferencer import Inferencer
+from tests.reference.inferencer import Inferencer
 from fireredvad_ncnn.servicer.servicer import UxVoiceActivityDetectorService
 
 

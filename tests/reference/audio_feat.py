@@ -1,3 +1,4 @@
+"""Pre-migration Fbank/CMVN oracle."""
 # Copyright 2026 Xiaohongshu. (Author: Kaituo Xu, Wenpeng Li, Kai Huang, Kun Liu)
 
 import math
