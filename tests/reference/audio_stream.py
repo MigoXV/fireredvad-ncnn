@@ -6,7 +6,7 @@ from collections.abc import Generator, Iterable
 import numpy as np
 import soxr
 
-from fireredvad_ncnn.models.constants import SAMPLE_RATE
+from tests.reference.constants import SAMPLE_RATE
 
 
 class AudioStreamResampler:

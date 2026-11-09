@@ -6,7 +6,7 @@ from pathlib import Path
 import numpy as np
 import soundfile as sf
 
-from fireredvad_ncnn.models.constants import FRAME_SHIFT_SAMPLE, SAMPLE_RATE
+from tests.reference.constants import FRAME_SHIFT_SAMPLE, SAMPLE_RATE
 
 DEFAULT_STREAM_CHUNK_FRAME = 10
 DEFAULT_INPUT_CHUNK_MS = DEFAULT_STREAM_CHUNK_FRAME * FRAME_SHIFT_SAMPLE * 1000 // SAMPLE_RATE

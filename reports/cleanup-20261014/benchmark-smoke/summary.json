@@ -1,0 +1,10 @@
+[
+  {
+    "backend": "native-parallel",
+    "concurrency": 1,
+    "rounds": 3,
+    "median_throughput": 49.50653347005121,
+    "median_p95_s": 0.19770910701481625,
+    "failures": 0
+  }
+]

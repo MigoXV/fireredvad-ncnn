@@ -1,0 +1,93 @@
+{
+  "dataset_provenance": {
+    "dataset": "VoxConverse v0.3 selected six shortest recordings; research subset only",
+    "license": "CC-BY-4.0",
+    "official_url": "https://github.com/joonson/voxconverse",
+    "annotation_revision": "24bf60be297701cd7e4ef18550c6d390c1b87365",
+    "audio_mirror": "https://huggingface.co/datasets/ggfox00000/dia-voxconverse-test",
+    "audio_revision": "7e3ea2807400b9ed79451e20513f7a50ac4fd846",
+    "selection": "six shortest full recordings; two calibration and four test; split fixed before any inference; msbyq and xkmqx held out for multi-speaker testing",
+    "records": [
+      {
+        "id": "fuzfh",
+        "audio": "/home/data-bin/audio-eval-20261020/voxconverse/fuzfh.wav",
+        "rttm": "/home/data-bin/audio-eval-20261020/voxconverse/fuzfh.rttm",
+        "duration": 26.048,
+        "speakers": 3,
+        "split": "calibration",
+        "audio_sha256": "c7fa9ac2a44d78b9f1d797b63e87b83b84ca9691c9516563ae3e0e737d27dbcd",
+        "rttm_sha256": "eee921cf6480ae486f5a92c9bd79ec05d7a7f213879ed6f63fddf7a58c5fa2b3"
+      },
+      {
+        "id": "msbyq",
+        "audio": "/home/data-bin/audio-eval-20261020/voxconverse/msbyq.wav",
+        "rttm": "/home/data-bin/audio-eval-20261020/voxconverse/msbyq.rttm",
+        "duration": 38.272,
+        "speakers": 4,
+        "split": "test",
+        "audio_sha256": "797019d573934a8a29c6fdb9cd707b4f10f8da781759f2e5d0542ef5729b365d",
+        "rttm_sha256": "63b26d71bbbfb4f1f7805b1e540665897714e378a13829bc31827ff9e4c60131"
+      },
+      {
+        "id": "euqef",
+        "audio": "/home/data-bin/audio-eval-20261020/voxconverse/euqef.wav",
+        "rttm": "/home/data-bin/audio-eval-20261020/voxconverse/euqef.rttm",
+        "duration": 41.152,
+        "speakers": 1,
+        "split": "calibration",
+        "audio_sha256": "94112489bdd818bc78361ab0dc3107cbbd63a13e804a7e31d3ed57cf6c25b4f2",
+        "rttm_sha256": "7ed318b4ceb58d245fb31965bf2f30df1bb530a550cd2631cb47ad2699ca7a6b"
+      },
+      {
+        "id": "dohag",
+        "audio": "/home/data-bin/audio-eval-20261020/voxconverse/dohag.wav",
+        "rttm": "/home/data-bin/audio-eval-20261020/voxconverse/dohag.rttm",
+        "duration": 43.904,
+        "speakers": 1,
+        "split": "test",
+        "audio_sha256": "5f9ec22ced0dede128e9a681f367e712f56b4a811dffcc071d71ab47c0c9a68d",
+        "rttm_sha256": "7e16664718898767562103aa8c1c0cc4d725bdf4728ba02439221b9efa73f7da"
+      },
+      {
+        "id": "neiye",
+        "audio": "/home/data-bin/audio-eval-20261020/voxconverse/neiye.wav",
+        "rttm": "/home/data-bin/audio-eval-20261020/voxconverse/neiye.rttm",
+        "duration": 48.832,
+        "speakers": 1,
+        "split": "test",
+        "audio_sha256": "a745828765902d2ddfb8b113282598e3759eb18afc6ce7d1ef79e112e9996a09",
+        "rttm_sha256": "cd70cd411847e2da0cbb3bdca1af1045c737f59bf92b9a1d09a4e0ec7976dbd7"
+      },
+      {
+        "id": "xkmqx",
+        "audio": "/home/data-bin/audio-eval-20261020/voxconverse/xkmqx.wav",
+        "rttm": "/home/data-bin/audio-eval-20261020/voxconverse/xkmqx.rttm",
+        "duration": 50.112,
+        "speakers": 3,
+        "split": "test",
+        "audio_sha256": "856953daf250f7403b049ca354c357319f3e91ce95a12aacf388fff3aa764380",
+        "rttm_sha256": "5ac26edc7f78dd5827db22d75be36963e84e8ebace1a02430e35dea3b641dd30"
+      }
+    ]
+  },
+  "split": "test",
+  "threshold": 0.5,
+  "raw_frame_time": "feature center = frame_index*10ms+12.5ms; only valid labeled frames scored",
+  "segment_frame_time": "10ms grid midpoint; production native offline postprocessing; no collar",
+  "postprocessing": {
+    "smooth_window_size": 5,
+    "speech_threshold": 0.5,
+    "pad_start_frame": 5,
+    "min_speech_frame": 8,
+    "max_speech_frame": 2000,
+    "min_silence_frame": 20,
+    "chunk_max_frame": 30000
+  },
+  "models": [
+    "/home/model-bin/MigoXV/firered-vad-stream-ncnn/constant-a-fp32",
+    "/home/model-bin/MigoXV/firered-vad-stream-ncnn/constant-a-int8"
+  ],
+  "source_repo": "/root/repositories/fireredvad",
+  "source_revision": "05107f7b2df88edb5a8242d678b48b747c181fb5",
+  "acceptance": "Task F1 loss <=0.005 absolute and no crash; performance candidate must also improve measured throughput"
+}

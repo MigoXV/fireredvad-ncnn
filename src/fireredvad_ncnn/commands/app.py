@@ -32,27 +32,12 @@ def serve(
         envvar="RUNNER",
         help="执行后端：ncnn。",
     ),
-    batch_size: int = typer.Option(
-        32,
-        "--batch-size",
-        envvar="BATCH_SIZE",
-        min=1,
-        help="旧动态组批兼容参数；原生引擎按块公平调度。",
-    ),
-    batch_wait_ms: float = typer.Option(
-        5.0,
-        "--batch-wait-ms",
-        envvar="BATCH_WAIT_MS",
-        min=0.0,
-        help="旧组批等待兼容参数；原生引擎不等待凑批。",
-    ),
     num_threads: int = typer.Option(4, min=1, envvar="NCNN_NUM_THREADS", help="原生计算 CPU 线程预算。"),
     engine_workers: int = typer.Option(1, min=1, envvar="ENGINE_WORKERS", help="原生并行会话 worker 数。"),
     threads_per_worker: int | None = typer.Option(None, min=1, envvar="NCNN_THREADS_PER_WORKER", help="每 worker NCNN 线程数，默认预算除以 worker 数。"),
     stream_chunk_frame: int = typer.Option(
         10,
         "--stream-chunk-frame",
-        "--chunk-size",
         envvar="CHUNK_SIZE",
         min=1,
         help="流式模型每次前向的帧数。",
@@ -62,10 +47,9 @@ def serve(
     max_concurrent_rpcs: int = typer.Option(
         256,
         "--max-concurrent-rpcs",
-        "--workers",
-        envvar=["GRPC_MAX_CONCURRENT_RPCS", "GRPC_WORKERS"],
+        envvar="GRPC_MAX_CONCURRENT_RPCS",
         min=1,
-        help="最大并发 RPC 数；--workers 为兼容别名。",
+        help="最大并发 RPC 数。",
     ),
     max_message_mb: int = typer.Option(
         100,
@@ -98,7 +82,7 @@ def serve(
         "--engine-ingress-capacity",
         envvar="ENGINE_INGRESS_CAPACITY",
         min=1,
-        help="API pending 请求与 IPC ingress 容量。",
+        help="进程内桥接请求容量（包括排队、执行和未消费结果）。",
     ),
     engine_queue_timeout_ms: int = typer.Option(
         5000,
@@ -157,7 +141,7 @@ def serve(
     ),
     log_level: str = typer.Option("INFO", "--log-level", envvar="LOG_LEVEL"),
 ) -> None:
-    """启动独立原生引擎进程与 Python 异步 gRPC 服务。"""
+    """启动单进程原生引擎与 Python 异步 gRPC 服务。"""
     try:
         logging_level = getattr(logging, log_level.upper(), None)
         if logging_level is None:
@@ -174,8 +158,6 @@ def serve(
             max_message_mb=max_message_mb,
         )
         engine_config = EngineConfig(
-            max_batch_size=batch_size,
-            max_batch_wait_ms=batch_wait_ms,
             max_sessions=engine_max_sessions,
             session_queue_capacity=engine_session_queue_capacity,
             ingress_capacity=engine_ingress_capacity,
@@ -184,7 +166,6 @@ def serve(
             max_inflight_mb=engine_max_inflight_mb,
         )
         stream_vad_config = FireRedStreamVadConfig(
-            use_gpu=False,
             smooth_window_size=smooth_window_size,
             speech_threshold=speech_threshold,
             pad_start_frame=pad_start_frame,
@@ -210,7 +191,6 @@ def serve(
             engine_config,
             stream_vad_config,
             endpoint_only,
-            logging_level,
         )
     )
 
@@ -222,24 +202,17 @@ async def _serve_async(
     engine_config: EngineConfig,
     stream_vad_config: FireRedStreamVadConfig,
     endpoint_only: bool,
-    logging_level: int,
 ) -> None:
     import fireredvad_ncnn.proto.ux_vad_pb2_grpc as pb_grpc
     from fireredvad_ncnn.engine.client import EngineClient
-    from fireredvad_ncnn.engine.process import EngineProcess
     from fireredvad_ncnn.servicer.servicer import UxVoiceActivityDetectorService
 
     logger = logging.getLogger(__name__)
-    process = EngineProcess(
-        model_path=model_path,
-        runtime_config=runtime_config,
-        engine_config=engine_config,
+    client = EngineClient(
+        model_path, engine_config, runtime_config=runtime_config,
         stream_vad_config=stream_vad_config,
-        endpoint_only=endpoint_only,
         max_payload_bytes=serving_config.max_message_bytes,
-        log_level=logging_level,
     )
-    client = EngineClient(process.endpoint, engine_config)
     server = None
     health_service = health.aio.HealthServicer()
     service_name = "ux_vad.UxVoiceActivityDetector"
@@ -249,12 +222,8 @@ async def _serve_async(
         loop.add_signal_handler(signum, shutdown_event.set)
 
     try:
-        process.start()
         await client.start()
-        ready = await client.wait_ready(
-            engine_config.startup_timeout_s,
-            process.is_alive,
-        )
+        ready = await client.health()
         options = [
             ("grpc.max_receive_message_length", serving_config.max_message_bytes),
             ("grpc.max_send_message_length", serving_config.max_message_bytes),
@@ -279,7 +248,7 @@ async def _serve_async(
         await health_service.set("", health_pb2.HealthCheckResponse.SERVING)
         await health_service.set(service_name, health_pb2.HealthCheckResponse.SERVING)
         logger.info(
-            "FireRedVAD ready: address=%s:%s worker_pid=%s generation=%s device=%s dtype=%s runner=%s batch=%s wait_ms=%s",
+            "FireRedVAD ready: address=%s:%s pid=%s generation=%s device=%s dtype=%s runner=%s workers=%s threads_per_worker=%s",
             serving_config.host,
             bound_port,
             ready.get("pid"),
@@ -287,31 +256,41 @@ async def _serve_async(
             runtime_config.device,
             runtime_config.dtype,
             runtime_config.runner_name,
-            engine_config.max_batch_size,
-            engine_config.max_batch_wait_ms,
+            runtime_config.worker_count,
+            runtime_config.effective_threads_per_worker,
         )
         monitor_task = asyncio.create_task(
-            _monitor_worker(process, shutdown_event),
+            _monitor_engine(client, shutdown_event),
             name="engine-monitor",
         )
         await shutdown_event.wait()
         await monitor_task
+        if client.failure is not None:
+            raise RuntimeError("native engine failed") from client.failure
     finally:
-        if server is not None:
-            await health_service.enter_graceful_shutdown()
-            await server.stop(engine_config.shutdown_grace_s)
-        await client.shutdown_worker()
+        try:
+            if server is not None:
+                await health_service.enter_graceful_shutdown()
+                await server.stop(engine_config.shutdown_grace_s)
+        finally:
+            await _close_engine(client, logger)
+
+
+async def _close_engine(client, logger):
+    try:
         await client.close()
-        process.join_or_terminate()
+    except TimeoutError:
+        # A native call cannot be killed safely in a Python thread. The
+        # container supervisor must restart the entire service process.
+        logger.critical("Native shutdown deadline exceeded; exiting service", exc_info=True)
+        import os
+        os._exit(1)
 
 
-async def _monitor_worker(process, shutdown_event: asyncio.Event) -> None:
+async def _monitor_engine(client, shutdown_event: asyncio.Event) -> None:
     while not shutdown_event.is_set():
-        if not process.is_alive():
-            logging.getLogger(__name__).error(
-                "Engine worker exited unexpectedly: exitcode=%s",
-                process.exitcode,
-            )
+        if client.failure is not None:
+            logging.getLogger(__name__).error("Native engine failed: %s", client.failure)
             shutdown_event.set()
             return
         await asyncio.sleep(0.2)
@@ -346,19 +325,6 @@ def infer_command(
         typer.echo(json.dumps({"segments": engine.infer(audio, sr)}, ensure_ascii=False))
     finally:
         engine.close()
-
-
-@app.command("benchmark")
-def benchmark_command(
-    model_path: Path = typer.Argument(..., exists=True, envvar="MODEL_PATH"),
-    reference_project: Path = typer.Option(Path("/workspace/opusi/fireredvad"), exists=True),
-    reference_model: Path = typer.Option(Path("/workspace/opusi/fireredvad/model-bin/MigoXV/firered-vad-stream"), exists=True),
-    wav_dir: Path = typer.Option(Path("/workspace/opusi/fireredvad/data-bin/0713"), exists=True),
-    output: Path = typer.Option(Path("benchmark-results")),
-):
-    """短时比较两个 CPU gRPC 服务的 1/4/8/16/32 路吞吐。"""
-    from fireredvad_ncnn.benchmark import benchmark
-    benchmark(model_path, reference_project, reference_model, wav_dir, output)
 
 
 def main() -> None:

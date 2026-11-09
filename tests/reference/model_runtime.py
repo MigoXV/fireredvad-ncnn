@@ -45,29 +45,6 @@ class VadModelRuntime:
     def allocate_session_cache():
         return [np.zeros((1, 128, 19), dtype=np.float32) for _ in range(8)]
 
-    @staticmethod
-    def release_session_cache(cache):
-        pass  # Arrays are owned by the session and reclaimed by Python.
-
-    def reset_session_cache(self, cache):
-        return self.allocate_session_cache()
-
-    @staticmethod
-    def session_cache_profile(cache):
-        return None if cache is None else tuple(tuple(x.shape[1:]) for x in cache)
-
-    @staticmethod
-    def commit_session_cache(current, candidate):
-        return candidate
-
-    @staticmethod
-    def discard_session_cache(candidate):
-        pass  # Candidates never alias committed state.
-
-    @staticmethod
-    def cache_metrics():
-        return None
-
     def _run(self, features, caches):
         length = len(features)
         padding = self.chunk_frames - length
@@ -108,16 +85,6 @@ class VadModelRuntime:
                 result, caches = self._run(feats[start:start+self.chunk_frames], caches)
                 probs.append(result)
             return np.concatenate(probs, axis=1), caches
-
-    forward_eager = forward_chunk
-
-    def forward_batch(self, features, caches_batch):
-        if len(features) != len(caches_batch):
-            raise ValueError("features and caches_batch must have the same length")
-        outputs = [self.forward_chunk(feat, cache) for feat, cache in zip(features, caches_batch)]
-        return [x[0][0] for x in outputs], [x[1] for x in outputs]
-
-    forward_session_batch = forward_batch
 
     def close(self):
         with self._lock:

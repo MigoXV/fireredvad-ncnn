@@ -12,7 +12,7 @@ import numpy as np
 
 from fireredvad_ncnn.configs.stream_vad_config import FireRedStreamVadConfig
 from tests.reference.audio_feat import AudioFeat
-from fireredvad_ncnn.models.constants import (
+from tests.reference.constants import (
     FRAME_LENGTH_SAMPLE,
     FRAME_PER_SECONDS,
     FRAME_SHIFT_SAMPLE,
@@ -50,7 +50,7 @@ class Inferencer:
     def __init__(self, model_dir: str | Path, ncpu: int = 4,
                  stream_chunk_frame: int = 10,
                  stream_vad_config: FireRedStreamVadConfig | None = None):
-        self.config = replace(stream_vad_config or FireRedStreamVadConfig(), use_gpu=False)
+        self.config = replace(stream_vad_config or FireRedStreamVadConfig())
         if stream_chunk_frame <= 0:
             raise ValueError("stream_chunk_frame must be positive")
         self.audio_feat = AudioFeat(str(Path(model_dir) / "cmvn.ark"))

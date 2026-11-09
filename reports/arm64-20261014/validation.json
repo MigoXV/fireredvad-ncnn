@@ -1,0 +1,40 @@
+{
+  "architecture": "aarch64",
+  "cpu": "HiSilicon Kunpeng 920 5220",
+  "build_type": "Release",
+  "ctest": {
+    "passed": 1,
+    "failed": 0
+  },
+  "service_integration": {
+    "passed": 3,
+    "skipped": 1,
+    "skip_reason": "external original reference project/model unavailable"
+  },
+  "numerical_probe": {
+    "passed": true,
+    "atol": 0.0001,
+    "rtol": 0.0001,
+    "max_absolute_error": 5.340576171875e-05,
+    "reference_torch": "2.8.0+cpu"
+  },
+  "service": {
+    "listen": "0.0.0.0:50052",
+    "pid": 3014284,
+    "cpus": [
+      12,
+      13,
+      14,
+      15
+    ],
+    "workers": 4,
+    "threads_per_worker": 1
+  },
+  "benchmark_notes": [
+    "Native engine through Python gRPC transport; not a standalone C ABI microbenchmark.",
+    "10-second audio repeated from a 2.24-second speech clip; 100 ms chunks; unpaced; 3 formal rounds.",
+    "Server CPUs 0-3; clients 4-7; shared host, no exclusive CPU reservation.",
+    "Service integration tests overlapped the initial single-stream case; later test parent pinned to CPUs 8-11.",
+    "No frozen Python baseline measured; no migration acceptance claim."
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "image": "fireredvad-ncnn:local-singleprocess-aarch64",
+  "image_id": "sha256:b8efd52631b880dbcf78d941919927e1e915ce307322693b5bed9c313be02f7a",
+  "size_bytes": 1522479564,
+  "platform": "linux/arm64",
+  "cleanup": [
+    "Removed external Torch service benchmark command and backend",
+    "Removed ignored dynamic batch configuration and CLI/environment aliases",
+    "Removed no-op public reset and unused GPU postprocessing field",
+    "Moved test-only constants out of runtime package; removed empty models/utils packages",
+    "Removed unused reference batch/cache interfaces; replaced old external test paths with repository fixtures"
+  ],
+  "retained": "Current native inference, model export, gRPC protocol and active numerical/event reference tests",
+  "validation": {
+    "service_tests_passed": 23,
+    "regression_passed": 152,
+    "regression_skipped": 21,
+    "known_baseline_reference_failures_deselected": 3,
+    "known_failure_evidence": "../singleprocess-20261014/baseline-reference-check.log",
+    "additional_reference_tests_passed": 4,
+    "real_audio_equivalence_cases": 7,
+    "benchmark_script_smoke": "3 rounds, no failures",
+    "removed_runtime_modules_absent": true,
+    "embedded_model_checksums": "passed",
+    "source_hashes_match_deployed_image": true,
+    "temporary_container_shutdown": "exit zero; native pending/session/inflight metrics zero"
+  },
+  "deployment": {
+    "address": "127.0.0.1:50022",
+    "health": "healthy",
+    "container_id": "95c80238c5d9f9efa1b0e6083ee4284cccd9583b987514462ae5f3d219de1cc7",
+    "image_id": "sha256:b8efd52631b880dbcf78d941919927e1e915ce307322693b5bed9c313be02f7a",
+    "pid": 605291,
+    "engine_child_processes": 0,
+    "offline_segments": [
+      [
+        0.29,
+        1.81
+      ]
+    ],
+    "stream_response_count": 25,
+    "rollback_container": "fireredvad-ncnn-arm64-precleanup-20261014"
+  },
+  "deployment_concurrency_32": {
+    "errors": 0,
+    "min_stream_x": 6.199950223757278
+  },
+  "pushed": false
+}

@@ -1,0 +1,434 @@
+[
+  {
+    "model": "stream-vad",
+    "concurrency": 1,
+    "rounds": 3,
+    "median_throughput_x": 50.13971852529629,
+    "min_max_throughput_x": [
+      44.62973936517566,
+      50.288527599980526
+    ],
+    "pooled_p50_p95_p99_s": [
+      0.17548824450932443,
+      0.3122902499861084,
+      0.3614814118226054
+    ],
+    "mean_cpu_cores": 0.9905084672216922,
+    "peak_rss_bytes": 75763712,
+    "errors": 0
+  },
+  {
+    "model": "stream-vad",
+    "concurrency": 2,
+    "rounds": 3,
+    "median_throughput_x": 96.92495449933561,
+    "min_max_throughput_x": [
+      96.83257439237266,
+      97.0190700458751
+    ],
+    "pooled_p50_p95_p99_s": [
+      0.1801078850403428,
+      0.2966398386517536,
+      0.32227613565512
+    ],
+    "mean_cpu_cores": 1.970937653074083,
+    "peak_rss_bytes": 78049280,
+    "errors": 0
+  },
+  {
+    "model": "stream-vad",
+    "concurrency": 4,
+    "rounds": 3,
+    "median_throughput_x": 177.24405530973618,
+    "min_max_throughput_x": [
+      176.91667377167497,
+      177.47504350752698
+    ],
+    "pooled_p50_p95_p99_s": [
+      0.18898361903848127,
+      0.3177376679726872,
+      0.3473581921332516
+    ],
+    "mean_cpu_cores": 3.7080494021129575,
+    "peak_rss_bytes": 81588224,
+    "errors": 0
+  },
+  {
+    "model": "stream-vad",
+    "concurrency": 8,
+    "rounds": 3,
+    "median_throughput_x": 181.20785502609644,
+    "min_max_throughput_x": [
+      181.0141586424304,
+      181.9375085317245
+    ],
+    "pooled_p50_p95_p99_s": [
+      0.3633197455201298,
+      0.6143590905645395,
+      0.6891964771179482
+    ],
+    "mean_cpu_cores": 3.799022751208792,
+    "peak_rss_bytes": 88494080,
+    "errors": 0
+  },
+  {
+    "model": "stream-vad",
+    "concurrency": 16,
+    "rounds": 3,
+    "median_throughput_x": 180.94190748334427,
+    "min_max_throughput_x": [
+      180.42088424104696,
+      181.20231206101633
+    ],
+    "pooled_p50_p95_p99_s": [
+      0.6676883629988879,
+      1.2599707408458924,
+      1.385153042114107
+    ],
+    "mean_cpu_cores": 3.8059690944419895,
+    "peak_rss_bytes": 96538624,
+    "errors": 0
+  },
+  {
+    "model": "stream-vad",
+    "concurrency": 32,
+    "rounds": 3,
+    "median_throughput_x": 183.29540858024512,
+    "min_max_throughput_x": [
+      182.91144130432377,
+      183.36771639682001
+    ],
+    "pooled_p50_p95_p99_s": [
+      1.2479753060033545,
+      1.8952527161687516,
+      2.6787088079028734
+    ],
+    "mean_cpu_cores": 3.861559756680336,
+    "peak_rss_bytes": 119148544,
+    "errors": 0
+  },
+  {
+    "model": "ip-fp32",
+    "concurrency": 1,
+    "rounds": 3,
+    "median_throughput_x": 40.83079424055114,
+    "min_max_throughput_x": [
+      39.54218405436094,
+      40.84191249714578
+    ],
+    "pooled_p50_p95_p99_s": [
+      0.2141036910470575,
+      0.3796761611709371,
+      0.3868524058582261
+    ],
+    "mean_cpu_cores": 1.0106101398120664,
+    "peak_rss_bytes": 73859072,
+    "errors": 0
+  },
+  {
+    "model": "ip-fp32",
+    "concurrency": 2,
+    "rounds": 3,
+    "median_throughput_x": 78.26358533550874,
+    "min_max_throughput_x": [
+      77.8526990122215,
+      78.41892493664287
+    ],
+    "pooled_p50_p95_p99_s": [
+      0.22072922653751448,
+      0.39107724206405686,
+      0.40071640431997363
+    ],
+    "mean_cpu_cores": 1.9719054076585643,
+    "peak_rss_bytes": 77373440,
+    "errors": 0
+  },
+  {
+    "model": "ip-fp32",
+    "concurrency": 4,
+    "rounds": 3,
+    "median_throughput_x": 140.7350106720304,
+    "min_max_throughput_x": [
+      140.60273938173498,
+      141.0163479382126
+    ],
+    "pooled_p50_p95_p99_s": [
+      0.23899718251777813,
+      0.3985603891953355,
+      0.43856140786199826
+    ],
+    "mean_cpu_cores": 3.7530218134199913,
+    "peak_rss_bytes": 81305600,
+    "errors": 0
+  },
+  {
+    "model": "ip-fp32",
+    "concurrency": 8,
+    "rounds": 3,
+    "median_throughput_x": 144.1665228526981,
+    "min_max_throughput_x": [
+      144.14882454744802,
+      144.52605639544566
+    ],
+    "pooled_p50_p95_p99_s": [
+      0.4605006180354394,
+      0.7755357293935957,
+      0.8627152046188712
+    ],
+    "mean_cpu_cores": 3.849813408130137,
+    "peak_rss_bytes": 88453120,
+    "errors": 0
+  },
+  {
+    "model": "ip-fp32",
+    "concurrency": 16,
+    "rounds": 3,
+    "median_throughput_x": 143.73897653268116,
+    "min_max_throughput_x": [
+      143.403560431138,
+      143.76308238787607
+    ],
+    "pooled_p50_p95_p99_s": [
+      0.8399071985040791,
+      1.5727787731331773,
+      1.7411242782359477
+    ],
+    "mean_cpu_cores": 3.850545723530671,
+    "peak_rss_bytes": 98426880,
+    "errors": 0
+  },
+  {
+    "model": "ip-fp32",
+    "concurrency": 32,
+    "rounds": 3,
+    "median_throughput_x": 144.36513768996988,
+    "min_max_throughput_x": [
+      144.26442408514023,
+      144.4933624313875
+    ],
+    "pooled_p50_p95_p99_s": [
+      1.5818612250150181,
+      2.4172342751233256,
+      3.3836418392567396
+    ],
+    "mean_cpu_cores": 3.888403207948205,
+    "peak_rss_bytes": 114388992,
+    "errors": 0
+  },
+  {
+    "model": "gemm-int8",
+    "concurrency": 1,
+    "rounds": 3,
+    "median_throughput_x": 59.85181873161611,
+    "min_max_throughput_x": [
+      56.24077824295508,
+      60.144193493391946
+    ],
+    "pooled_p50_p95_p99_s": [
+      0.14689156843815,
+      0.2587622995604761,
+      0.26231434890301897
+    ],
+    "mean_cpu_cores": 0.9992150408447654,
+    "peak_rss_bytes": 74190848,
+    "errors": 0
+  },
+  {
+    "model": "gemm-int8",
+    "concurrency": 2,
+    "rounds": 3,
+    "median_throughput_x": 117.56728603717548,
+    "min_max_throughput_x": [
+      117.54418256569312,
+      117.66325418942884
+    ],
+    "pooled_p50_p95_p99_s": [
+      0.1477233290206641,
+      0.2439357032533732,
+      0.26526310879620724
+    ],
+    "mean_cpu_cores": 1.9620781601603479,
+    "peak_rss_bytes": 73838592,
+    "errors": 0
+  },
+  {
+    "model": "gemm-int8",
+    "concurrency": 4,
+    "rounds": 3,
+    "median_throughput_x": 217.51589244798333,
+    "min_max_throughput_x": [
+      216.9748501447997,
+      218.1123985794847
+    ],
+    "pooled_p50_p95_p99_s": [
+      0.15325149649288505,
+      0.25861444831243685,
+      0.28301333786104804
+    ],
+    "mean_cpu_cores": 3.657941293483096,
+    "peak_rss_bytes": 79974400,
+    "errors": 0
+  },
+  {
+    "model": "gemm-int8",
+    "concurrency": 8,
+    "rounds": 3,
+    "median_throughput_x": 222.44672836800137,
+    "min_max_throughput_x": [
+      222.37454502359702,
+      223.48528712637835
+    ],
+    "pooled_p50_p95_p99_s": [
+      0.2918046799604781,
+      0.500631528685335,
+      0.5632422022672835
+    ],
+    "mean_cpu_cores": 3.749292802108314,
+    "peak_rss_bytes": 83374080,
+    "errors": 0
+  },
+  {
+    "model": "gemm-int8",
+    "concurrency": 16,
+    "rounds": 3,
+    "median_throughput_x": 223.47763725730042,
+    "min_max_throughput_x": [
+      222.55112718939668,
+      223.84763961195682
+    ],
+    "pooled_p50_p95_p99_s": [
+      0.5358869275078177,
+      1.030043812462827,
+      1.124336564585101
+    ],
+    "mean_cpu_cores": 3.7703844618942086,
+    "peak_rss_bytes": 94838784,
+    "errors": 0
+  },
+  {
+    "model": "gemm-int8",
+    "concurrency": 32,
+    "rounds": 3,
+    "median_throughput_x": 223.86458914366793,
+    "min_max_throughput_x": [
+      126.59219052342304,
+      226.92116582059694
+    ],
+    "pooled_p50_p95_p99_s": [
+      1.2176243605208583,
+      2.6260957329883237,
+      3.6248007726878844
+    ],
+    "mean_cpu_cores": 3.2688369987385997,
+    "peak_rss_bytes": 109027328,
+    "errors": 0
+  },
+  {
+    "model": "ip-int8-kl",
+    "concurrency": 1,
+    "rounds": 3,
+    "median_throughput_x": 38.14576574598525,
+    "min_max_throughput_x": [
+      38.07583347929613,
+      38.220014693744275
+    ],
+    "pooled_p50_p95_p99_s": [
+      0.23029648151714355,
+      0.37219058945192884,
+      0.4127390421787277
+    ],
+    "mean_cpu_cores": 1.0182540051578488,
+    "peak_rss_bytes": 72601600,
+    "errors": 0
+  },
+  {
+    "model": "ip-int8-kl",
+    "concurrency": 2,
+    "rounds": 3,
+    "median_throughput_x": 74.7438545128615,
+    "min_max_throughput_x": [
+      74.66205707988635,
+      74.85740995001339
+    ],
+    "pooled_p50_p95_p99_s": [
+      0.2316436679684557,
+      0.38132131986203543,
+      0.42054564468213357
+    ],
+    "mean_cpu_cores": 1.9778453469107393,
+    "peak_rss_bytes": 73830400,
+    "errors": 0
+  },
+  {
+    "model": "ip-int8-kl",
+    "concurrency": 4,
+    "rounds": 3,
+    "median_throughput_x": 141.88963148571264,
+    "min_max_throughput_x": [
+      141.7668794262254,
+      142.67880626503046
+    ],
+    "pooled_p50_p95_p99_s": [
+      0.2380038375267759,
+      0.3902953319891815,
+      0.4331943325756583
+    ],
+    "mean_cpu_cores": 3.755001176006424,
+    "peak_rss_bytes": 78266368,
+    "errors": 0
+  },
+  {
+    "model": "ip-int8-kl",
+    "concurrency": 8,
+    "rounds": 3,
+    "median_throughput_x": 145.96498053075643,
+    "min_max_throughput_x": [
+      145.45193354158963,
+      146.00931893384035
+    ],
+    "pooled_p50_p95_p99_s": [
+      0.4536260745371692,
+      0.7667119051271584,
+      0.8544912417035084
+    ],
+    "mean_cpu_cores": 3.860697363054566,
+    "peak_rss_bytes": 83808256,
+    "errors": 0
+  },
+  {
+    "model": "ip-int8-kl",
+    "concurrency": 16,
+    "rounds": 3,
+    "median_throughput_x": 145.43321185979752,
+    "min_max_throughput_x": [
+      145.31375988014196,
+      146.01438023703713
+    ],
+    "pooled_p50_p95_p99_s": [
+      0.8375783374649473,
+      1.549862072832184,
+      1.7173739783489144
+    ],
+    "mean_cpu_cores": 3.8548414959553514,
+    "peak_rss_bytes": 95756288,
+    "errors": 0
+  },
+  {
+    "model": "ip-int8-kl",
+    "concurrency": 32,
+    "rounds": 3,
+    "median_throughput_x": 146.63827501271385,
+    "min_max_throughput_x": [
+      131.71089111911326,
+      146.98167962434434
+    ],
+    "pooled_p50_p95_p99_s": [
+      1.5645344544900581,
+      2.6580962386855322,
+      3.334882855626053
+    ],
+    "mean_cpu_cores": 3.773196245619283,
+    "peak_rss_bytes": 110272512,
+    "errors": 0
+  }
+]

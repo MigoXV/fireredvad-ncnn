@@ -20,7 +20,6 @@ _POSTPROCESSING_PARAMETERS = _INTEGER_POSTPROCESSING_PARAMETERS | {
 
 @dataclass
 class FireRedStreamVadConfig:
-    use_gpu: bool = False
     smooth_window_size: int = 5  # 概率平滑窗口大小，单位为帧
     speech_threshold: float = 0.5  # 语音/静音判定阈值
     pad_start_frame : int = 5  # 检测到语音起点时向前补的帧数
