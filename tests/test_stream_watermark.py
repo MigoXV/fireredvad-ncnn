@@ -5,10 +5,8 @@ from types import SimpleNamespace
 
 import numpy as np
 import pytest
-import numpy as np
 
 from fireredvad_ncnn.configs.stream_vad_config import FireRedStreamVadConfig
-from tests.reference.worker import _Session, _filter_stream_events
 from tests.reference.inferencer import Inferencer, PreparedStreamRequest, _StreamState
 from tests.reference.stream_events import StreamEventPublisher
 from tests.reference.audio_feat import KaldifeatFbank
@@ -56,9 +54,7 @@ def test_every_response_preserves_final_membership(endpoint_only, chunk_size, sm
     raw, duration = _probability_events(
         probs, chunk_size, smooth_window_size=smooth, pad_start_frame=pad
     )
-    session = _Session(state=None, endpoint_only=endpoint_only)
-    events = [tuple(event) for event in _filter_stream_events(session, raw)]
-    assert events == list(StreamEventPublisher(endpoint_only).publish(raw))
+    events = list(StreamEventPublisher(endpoint_only).publish(raw))
     # 同时验证线上 Duration 转换，水位和边界不能因舍入而交叉。
     wire = []
     for response in _events_to_responses(events):

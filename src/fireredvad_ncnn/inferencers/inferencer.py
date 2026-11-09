@@ -12,7 +12,7 @@ class Inferencer:
     def __init__(self, model_dir, ncpu=4, stream_chunk_frame=10,
                  stream_vad_config: FireRedStreamVadConfig | None = None, *,
                  worker_count=1, threads_per_worker=None):
-        self.config = replace(stream_vad_config or FireRedStreamVadConfig(), use_gpu=False)
+        self.config = replace(stream_vad_config or FireRedStreamVadConfig())
         runtime = RuntimeConfig(num_threads=ncpu, stream_chunk_frame=stream_chunk_frame,
                                 worker_count=worker_count, threads_per_worker=threads_per_worker)
         self.engine = NativeEngine(model_dir, cpu_budget=ncpu, worker_count=worker_count,
@@ -37,9 +37,6 @@ class Inferencer:
             except RuntimeError as exc:
                 if not self.engine.closed and not (isinstance(exc, NativeError) and exc.status == 4):
                     raise
-
-    def reset(self):
-        """Calls own independent sessions; retained for public compatibility."""
 
     def close(self):
         self.engine.close()

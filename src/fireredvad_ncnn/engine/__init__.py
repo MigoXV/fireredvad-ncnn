@@ -1,6 +1,5 @@
-"""Asynchronous single-device inference engine."""
+"""In-process asynchronous native inference engine."""
 
 from fireredvad_ncnn.engine.client import EngineClient
-from fireredvad_ncnn.engine.process import EngineProcess
 
-__all__ = ["EngineClient", "EngineProcess"]
+__all__ = ["EngineClient"]

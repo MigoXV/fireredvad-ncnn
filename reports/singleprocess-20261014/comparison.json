@@ -1,0 +1,50 @@
+{
+  "acceptance": {
+    "min_throughput_ratio": 0.9,
+    "max_p95_ratio": 1.1,
+    "failures": 0
+  },
+  "passed": true,
+  "cases": [
+    {
+      "concurrency": 1,
+      "old_throughput": 48.46256980773219,
+      "new_throughput": 49.36273109283933,
+      "throughput_ratio": 1.0185743613819571,
+      "p95_ratio": 0.9728688573771654,
+      "passed": true
+    },
+    {
+      "concurrency": 4,
+      "old_throughput": 102.2457063015927,
+      "new_throughput": 124.5107300264148,
+      "throughput_ratio": 1.2177599874868807,
+      "p95_ratio": 0.8203242533495816,
+      "passed": true
+    },
+    {
+      "concurrency": 8,
+      "old_throughput": 121.02722133288768,
+      "new_throughput": 134.9057472715618,
+      "throughput_ratio": 1.1146727635801947,
+      "p95_ratio": 0.89044306362203,
+      "passed": true
+    },
+    {
+      "concurrency": 16,
+      "old_throughput": 121.61711347691076,
+      "new_throughput": 121.99158096936718,
+      "throughput_ratio": 1.0030790690697284,
+      "p95_ratio": 0.9974284002620514,
+      "passed": true
+    },
+    {
+      "concurrency": 32,
+      "old_throughput": 125.9256324446675,
+      "new_throughput": 140.90304011568927,
+      "throughput_ratio": 1.1189385145840178,
+      "p95_ratio": 0.8939498389309409,
+      "passed": true
+    }
+  ]
+}

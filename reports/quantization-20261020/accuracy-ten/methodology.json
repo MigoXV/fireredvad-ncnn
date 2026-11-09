@@ -1,0 +1,25 @@
+{
+  "dataset_revision": "d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1",
+  "split": "test",
+  "threshold": 0.5,
+  "raw_frame_time": "feature center = frame_index*10ms+12.5ms; only valid labeled frames scored",
+  "segment_frame_time": "10ms grid midpoint; production native offline postprocessing; no collar",
+  "postprocessing": {
+    "smooth_window_size": 5,
+    "speech_threshold": 0.5,
+    "pad_start_frame": 5,
+    "min_speech_frame": 8,
+    "max_speech_frame": 2000,
+    "min_silence_frame": 20,
+    "chunk_max_frame": 30000
+  },
+  "models": [
+    "model-bin/stream-vad",
+    "/home/model-bin/MigoXV/firered-vad-stream-ncnn/ip-fp32",
+    "/home/model-bin/MigoXV/firered-vad-stream-ncnn/gemm-int8",
+    "/home/model-bin/MigoXV/firered-vad-stream-ncnn/ip-int8-kl"
+  ],
+  "source_repo": "/root/repositories/fireredvad",
+  "source_revision": "05107f7b2df88edb5a8242d678b48b747c181fb5",
+  "acceptance": "Task F1 loss <=0.005 absolute and no crash; performance candidate must also improve measured throughput"
+}

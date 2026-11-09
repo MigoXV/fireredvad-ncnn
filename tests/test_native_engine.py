@@ -247,6 +247,10 @@ def test_input_is_copied_and_errors_do_not_consume_sequence(native):
     audio[:] = 0
     assert native.wait(request) == reference_events
     native.session_close(session)
+    # Completion can be polled before the worker drops its last shared lease.
+    deadline = time.monotonic() + 1
+    while native.metrics()["pending"] and time.monotonic() < deadline:
+        time.sleep(.001)
     assert native.metrics()["pending"] == 0
 
 
@@ -382,7 +386,7 @@ def test_poll_timeout_does_not_cancel_and_result_survives_engine_close():
 
 
 def test_native_cli_raw_eof_and_signal(tmp_path):
-    binary = Path("build/x86_64/fireredvad")
+    binary = Path(os.environ.get("NCNN_TEST_CLI", "build/x86_64/fireredvad"))
     if not binary.exists():
         pytest.skip("native CLI required")
     completed = subprocess.run([str(binary),"stream",str(MODEL),"-","--raw-rate","16000"],

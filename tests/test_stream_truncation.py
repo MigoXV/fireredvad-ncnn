@@ -5,7 +5,7 @@ from types import SimpleNamespace
 import numpy as np
 
 from tests.reference.inferencer import Inferencer
-from fireredvad_ncnn.models.constants import SAMPLE_RATE
+from tests.reference.constants import SAMPLE_RATE
 from tests.reference.audio_stream import AudioStreamResampler
 
 

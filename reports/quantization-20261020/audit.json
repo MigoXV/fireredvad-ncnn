@@ -1,0 +1,53 @@
+{
+  "source_revision": "05107f7b2df88edb5a8242d678b48b747c181fb5",
+  "ncnn_revision": "a458478e27bf53992ded17de190b14d17bf89a3a",
+  "file_sha256": {
+    "/root/repositories/fireredvad-ncnn/scripts/quantization_research.py": "5e4dfb71eca8530ddb475f64952d32faed4e65febff37359216d702de2f750ef",
+    "/root/repositories/fireredvad-ncnn/scripts/build_quantization_tools.sh": "41e29d477a82247906af62cc506b2a866eac9ef585bb6a4c8bba759b0715c5c5",
+    "/root/repositories/fireredvad-ncnn/tests/test_quantization_research.py": "a8e33d97ee3a7d91328cc852bfb1ef285167e8c6462acef833b995e1926360d1",
+    "/root/repositories/fireredvad-ncnn/tests/test_quantized_runtime_integration.py": "5c6d484e83af7e27bf3b93a6eec6dbb815b2299be6a838b9dd736974e7feeb0e",
+    "/root/repositories/fireredvad-ncnn/src/native/src/engine.cpp": "7af865bb530941c8874d233fa76087eaa0182588c058fc51a4cb8fa1a8616fef",
+    "/root/repositories/fireredvad-ncnn/src/native/include/fireredvad.h": "4a321ac672d869f0e3edf5a21ca1f16762c4ab54bd4cbf9dc32580cff1e0daf3",
+    "/root/repositories/fireredvad-ncnn/build/native/libfireredvad.so": "b1a8501e713ef5c6ff253f5862b3e3264b2a7228e082c6c2754ddb9e17914d83",
+    "/root/repositories/fireredvad-ncnn/build/native/_deps/ncnn-src/tools/quantize/ncnn2table.cpp": "e9a5237151eb486ebc4d80c6868e606a0bfa4e6e38383401df739a8169ee9161",
+    "/root/repositories/fireredvad-ncnn/build/native/_deps/ncnn-src/tools/quantize/ncnn2int8.cpp": "01d104a5e08852ac4aec54182c13048964a5ef6fdc8153d8f464de0944b38340",
+    "/root/repositories/fireredvad-ncnn/build/native/_deps/ncnn-src/tools/modelwriter.h": "370b68a725bb9baae478d8cab75efbb2a31e079b6ef60bce4d7aef5a5b686bc1"
+  },
+  "source_file_sha256": {
+    "/root/repositories/fireredvad/src/fireredvad/models/firered_vad_stream/module_firered_vad_stream.py": "013e2342f6cc7e9e5b397d873cdc389b35c30a1e1010a4b017709dac797905eb",
+    "/home/model-bin/MigoXV/firered-vad-stream/model.safetensors": "715b19620ce21e885dc7c3c399231111c761966394ea34f6bb29f1731ed95070"
+  },
+  "lscpu": "Architecture:                       aarch64\nCPU op-mode(s):                     64-bit\nByte Order:                         Little Endian\nCPU(s):                             64\nOn-line CPU(s) list:                0-63\nVendor ID:                          HiSilicon\nBIOS Vendor ID:                     HiSilicon\nModel name:                         Kunpeng-920\nBIOS Model name:                    HUAWEI Kunpeng 920 5220\nModel:                              0\nThread(s) per core:                 1\nCore(s) per socket:                 32\nSocket(s):                          2\nStepping:                           0x1\nFrequency boost:                    disabled\nCPU max MHz:                        2600.0000\nCPU min MHz:                        200.0000\nBogoMIPS:                           200.00\nFlags:                              fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm jscvt fcma dcpop asimddp asimdfhm ssbs\nL1d cache:                          4 MiB (64 instances)\nL1i cache:                          4 MiB (64 instances)\nL2 cache:                           32 MiB (64 instances)\nL3 cache:                           64 MiB (2 instances)\nNUMA node(s):                       2\nNUMA node0 CPU(s):                  0-31\nNUMA node1 CPU(s):                  32-63\nVulnerability Gather data sampling: Not affected\nVulnerability Itlb multihit:        Not affected\nVulnerability L1tf:                 Not affected\nVulnerability Mds:                  Not affected\nVulnerability Meltdown:             Not affected\nVulnerability Mmio stale data:      Not affected\nVulnerability Retbleed:             Not affected\nVulnerability Spec rstack overflow: Not affected\nVulnerability Spec store bypass:    Not affected\nVulnerability Spectre v1:           Mitigation; __user pointer sanitization\nVulnerability Spectre v2:           Not affected\nVulnerability Srbds:                Not affected\nVulnerability Tsx async abort:      Not affected\n",
+  "compiler": "g++ (GCC) 10.3.1\nCopyright (C) 2020 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "native_flags": [
+    "CMAKE_BUILD_TYPE:STRING=Release",
+    "NCNN_ARM82:BOOL=ON",
+    "NCNN_ARM82DOT:BOOL=ON",
+    "NCNN_ARM82FP16FML:BOOL=ON",
+    "NCNN_INT8:BOOL=ON",
+    "NCNN_OPENMP:BOOL=ON",
+    "NCNN_RUNTIME_CPU:BOOL=ON"
+  ],
+  "validation_totals": {
+    "native_rounds": 108,
+    "native_requests": 8640,
+    "grpc_rounds": 36,
+    "grpc_requests": 2880,
+    "grpc_services_cleanly_exited": 12,
+    "errors": 0
+  },
+  "python": "3.10.22 (main, Oct 13 2026, 12:50:02) [GCC 10.3.1]",
+  "python_packages": {
+    "numpy": "1.26.4",
+    "ncnn": "1.0.20260526",
+    "torch": "2.9.1",
+    "soundfile": "0.13.1",
+    "kaldiio": "2.18.1",
+    "kaldi-native-fbank-buffer": "1.22.4",
+    "grpcio": "1.78.0",
+    "protobuf": "6.33.6",
+    "psutil": "7.2.2",
+    "typer": "0.24.2",
+    "pytest": "9.1.1"
+  }
+}

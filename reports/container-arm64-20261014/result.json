@@ -1,0 +1,43 @@
+{
+  "image": "fireredvad-ncnn:local-aarch64",
+  "image_id": "sha256:6a5383345f25f704fe9acbb3b0a16bb247fa2c3ad1db33530707829b37c4bedc",
+  "size_bytes": 1530115429,
+  "platform": "linux/arm64",
+  "repo_digests": [],
+  "base_image_id": "sha256:3d6d6fde56a661758f9849fda80b317ae8c6218da96a289a963e7da6f8ac6835",
+  "base_repo_digests": [
+    "registry.cn-hangzhou.aliyuncs.com/migo-dl/python@sha256:87dcc89b4124c0ea15059a627a792b96b186b75fe7d33de0e3b476c3d9c3f6c0"
+  ],
+  "model_path": "/app/model-bin/stream-vad",
+  "model_files": {
+    "metadata.json": "e7df4572a92cb650ecd4f551275590d1e18eee5e5cba86875f399eba3fb693cf",
+    "model.ncnn.bin": "ba757b5f1c1b8fe2f695641a4230ead1544156b7f43d79848af95c368f8a35d8",
+    "model.ncnn.param": "162078e309382bf49b21b10f66870780f76d928cf828055a467d1b1037f5dd41",
+    "cmvn.ark": "c87f6f13edf0f0ec7535ddfc9cc3387d9268cb234b70182d566c5e2edf3ca473"
+  },
+  "default_configuration": {
+    "port": 50051,
+    "workers": 4,
+    "threads_per_worker": 1,
+    "cpu_budget": 4
+  },
+  "validation": {
+    "native_ctest": "passed",
+    "model_load": "passed",
+    "runtime_links": "passed",
+    "grpc_health": "healthy",
+    "real_speech_offline_and_stream_matches_host_native": true,
+    "port_and_thread_environment_overrides": "passed",
+    "graceful_shutdown_and_process_cleanup": "passed"
+  },
+  "temporary_validation_containers": "removed",
+  "pushed": false,
+  "docker_service": "enabled and active",
+  "git_revision": "902bbd1d2965cc122f0c2e873839b80d22e66737",
+  "source_changes": [
+    "docker/cpu-aarch64.dockerfile",
+    "docker/healthcheck.py",
+    ".dockerignore",
+    "README.md"
+  ]
+}

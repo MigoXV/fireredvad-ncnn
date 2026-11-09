@@ -1,0 +1,428 @@
+{
+  "dataset": "TEN-framework/ten-vad testset",
+  "revision": "d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1",
+  "readme_url": "https://github.com/TEN-framework/ten-vad/blob/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/README.md",
+  "split_rule": "01-10 calibration; 11-30 held-out test, fixed before evaluating",
+  "files": [
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-01.scv",
+      "split": "calibration",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-01.scv",
+      "git_blob": "5c076fe39d8a6c5a51ce8d14168195c60a70ade8",
+      "sha256": "9b15392f91383cfe05e16505bca7b6ab45c42d5a897dcdf56abc3840a66dcaf8"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-01.wav",
+      "split": "calibration",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-01.wav",
+      "git_blob": "b631d4844900a79a4f00ac184a45b25cee2e9bf0",
+      "sha256": "27cfaad6f5eb8c501171ed9c787dc0f26070d5c0d18717b918cccf15428487f5"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-02.scv",
+      "split": "calibration",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-02.scv",
+      "git_blob": "2a46f3553392e4ef7f9a9151d260de33d631254c",
+      "sha256": "8a3f039273e18da5da3d76c33c1880bd06454a9c32499c9959736c5dea7abca2"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-02.wav",
+      "split": "calibration",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-02.wav",
+      "git_blob": "32179a0a1971e2e0680808d73a1f5a78812888cd",
+      "sha256": "c65e4f2093ae81e9e7f5290808ca13e18fce0bedf9b3515bdf149a85c7f45a6f"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-03.scv",
+      "split": "calibration",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-03.scv",
+      "git_blob": "c76828f42ad682abb1fbd9c9c128366223a358d9",
+      "sha256": "f5bcc35772834eac92d6910154b10d0c0d1e3277a8b2c49d28b6a877f40535f1"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-03.wav",
+      "split": "calibration",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-03.wav",
+      "git_blob": "746fb5605d9be58f6152818bba88c0bbea133959",
+      "sha256": "00d4f33e6f499f67df4787b389b10f0f3608dad906c89e68ff58a9e9555ea3a1"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-04.scv",
+      "split": "calibration",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-04.scv",
+      "git_blob": "05ccbab5479718816d2945d53c933cc32fbecd19",
+      "sha256": "ed07131c3a2d2c343aec1160367273b43aa0db52e9f21f99a25dcbb3983827fb"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-04.wav",
+      "split": "calibration",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-04.wav",
+      "git_blob": "f141d886d5c902444fa2f12a121cd26bb835cb68",
+      "sha256": "8556acc7ec9b4b462c28b8989e43f226713416b4748f635c0d8eeaf0664ce736"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-05.scv",
+      "split": "calibration",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-05.scv",
+      "git_blob": "0ea350b713a382c4a6cac1dcb32f14ad4809fe1c",
+      "sha256": "ea96cffe38d0b603abd5575aeb78edaf41680900b430c86324a102cdd5c48815"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-05.wav",
+      "split": "calibration",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-05.wav",
+      "git_blob": "7bf2381ae84a24dbfde7e33cabdd7ffee0ee2d70",
+      "sha256": "85c138fc926740369cc3fe41b5e55f4780992da1c1da53619dfbd4c56e574275"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-06.scv",
+      "split": "calibration",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-06.scv",
+      "git_blob": "9a507c9796a828ea7054d29bba261304d97c03e9",
+      "sha256": "d757906e8f642208aa946e55a2701478ae51b335b4f33974fccbdc64bfea8d02"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-06.wav",
+      "split": "calibration",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-06.wav",
+      "git_blob": "8c8da418dcf318e401ec263a9819393d4f772ff1",
+      "sha256": "d5da0b54a745b8387cd5c89ad8a6a9934b2ecc2da1b1a1bd623fc63951830542"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-07.scv",
+      "split": "calibration",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-07.scv",
+      "git_blob": "4339d193c88963cfffa629a6a3e838d96b513e17",
+      "sha256": "6d417f583653c95f49a179de39959bf49f19deb42b3d30c186437907e3b79017"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-07.wav",
+      "split": "calibration",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-07.wav",
+      "git_blob": "fba4f42e4e9b871b3fa5a67e7ac8e575b2dba75c",
+      "sha256": "24e2929e1266e2e67526096b59d27edc550c6b97ca96816c8976193b18c3e884"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-08.scv",
+      "split": "calibration",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-08.scv",
+      "git_blob": "b4d26ede385bf5fa1255806d0d1108bab4cba23d",
+      "sha256": "4771e16100a78fc75b92467d7ab74eb3e9955f71e6c8b985dd62befb61e6ea95"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-08.wav",
+      "split": "calibration",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-08.wav",
+      "git_blob": "46d601cf1761d6da5d2bef710ede5d5e154dc614",
+      "sha256": "d25165c8e1dd540d93beb2b9467d4064516569afbfb84020ae237af919cd3f5d"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-09.scv",
+      "split": "calibration",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-09.scv",
+      "git_blob": "d8d7a4dd6374d1f06ff7445b2184a707bbb7755d",
+      "sha256": "4e05c0d7a0216b55d1d0b0826aeab04d41fcdf35243251ebb2c24b4f055ddf46"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-09.wav",
+      "split": "calibration",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-09.wav",
+      "git_blob": "434883cefa0a7501b5866a8b43453f3a9c7a876f",
+      "sha256": "ba0098673ba665d7f56237508dc510691a6e7c8ad87a322f33fc33fa7cb3aacb"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-10.scv",
+      "split": "calibration",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-10.scv",
+      "git_blob": "6f28145730a11e45d42714a76dbd6d62658ff3e8",
+      "sha256": "71a4a70ad3c21c31a896121f1b3a4b9be0a21a26147c55711d7d7acdfb5a21ec"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-10.wav",
+      "split": "calibration",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-10.wav",
+      "git_blob": "3e0ac04fe97a7dda97750b82a4cbe5ab57d9f43c",
+      "sha256": "56d6c5bf36308086de176b51341482605f8658e02a02c963bb5e6a773c7d0868"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-11.scv",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-11.scv",
+      "git_blob": "be42c096509070c2918eb1a15b5db514c5ed9632",
+      "sha256": "40b8b0a2220d81e0592411f6b53e8fff7d1ffc0142ce9e0758eddfead515d9ca"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-11.wav",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-11.wav",
+      "git_blob": "641faa11dc552ed8df8a8122b3032ee5664f881a",
+      "sha256": "eeccaff1c16e4167a896a07cd0cce15ffa53251f2ba081f3402cc69802538b01"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-12.scv",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-12.scv",
+      "git_blob": "2f4ccbfc1e70dcabae6e811844eedefcb89b998f",
+      "sha256": "371d8d55d4159f3e140afcef5b308ab3e47bb8ac5a1ff38f47a1cdc768a00e5e"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-12.wav",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-12.wav",
+      "git_blob": "70e9a3cb852b846285f234c330e76c39cb5218c7",
+      "sha256": "a1131821079f313e7a5719e9d90e437b0a28ba76ed33877bae5c0140ce14d867"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-13.scv",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-13.scv",
+      "git_blob": "c01a347e281e65ea8dc95a9143361bb8f57015f3",
+      "sha256": "b81854f554f5aced7248a8dbe95940b7cb4b3009d98dae02629786ebab4c4ffc"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-13.wav",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-13.wav",
+      "git_blob": "93fc4f6429234855e5f07c4e6d8c3bfc44abfcde",
+      "sha256": "27ff840a38d3052e0e01a96dbe20e33f6e0c2916a8bd85f4a9e5d0841083a7d9"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-14.scv",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-14.scv",
+      "git_blob": "dfd626290d55b58904bcc4af913c9aa7ef541e77",
+      "sha256": "0822491a9938d4c771d6feff77b4201f001d4b2f66008db03cbe9a817c246ebb"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-14.wav",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-14.wav",
+      "git_blob": "d90d6c0b30ca79cdaf8c0859bb4f12794f9e1b59",
+      "sha256": "76cfbe88a9b670e6bec76d083a25a16c262728768e21a36ca088ea56b94b38de"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-15.scv",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-15.scv",
+      "git_blob": "135c0b477ba55b9000aa47d97755b7d7b52c976c",
+      "sha256": "bbdb193263f6529b58773c40c1912cccdd363eab9dd128540048ed8fc3f0295d"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-15.wav",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-15.wav",
+      "git_blob": "5e996f255c4123b14a4720cedeb88309d90506b0",
+      "sha256": "64c4e91704f7ca9d745b17412b82b16d725a39a4d41b7e415be70c81dc05d85f"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-16.scv",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-16.scv",
+      "git_blob": "3eb535a9595f16a2a11fae8c0b85d7e167b4916e",
+      "sha256": "97bc64653f0d3aa015b3a13bdb02109b523feab12f2a1033e8c8ac17703548e4"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-16.wav",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-16.wav",
+      "git_blob": "2737ce05b6834804ff3f6ceea210cab8ca17f989",
+      "sha256": "a6e0818381e0d6e8f8c70f346cb04e486d83ce677618152e592a9301280ce086"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-17.scv",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-17.scv",
+      "git_blob": "c673d1fbec3dc03dd0a50b653119ec6f29ad19d8",
+      "sha256": "ed4103b3b43c4660f9189a96a5e80b168bb10234683a185c6bff3e2f453b65f5"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-17.wav",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-17.wav",
+      "git_blob": "77415ba466b03c1a3991dbf86a0f2d65dbd08464",
+      "sha256": "d0314570c0da423f19aebe29104e92f89a4f416e7477dcac007bd2aee090191c"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-18.scv",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-18.scv",
+      "git_blob": "d2d586b08728e6712fd657818c5bed85238de5ab",
+      "sha256": "90f7e1e6b5ffba221cc77685f0faf7f852410feef08d3f6d5d0a3e00f696b6a2"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-18.wav",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-18.wav",
+      "git_blob": "ed54963d931d1f45b0a5337d341d4a6498b5b50d",
+      "sha256": "2714334967a0f57fea475fc5f6f711c01e60a007c4d85c7f12faa6dff6251cee"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-19.scv",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-19.scv",
+      "git_blob": "7f5a519a8b83eac021d0568b5e94f4a3b9b6b385",
+      "sha256": "c52b2c883c2ecc1546e57edafc712ef5c586faa7bbab597b6992946f9680c0ce"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-19.wav",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-19.wav",
+      "git_blob": "accf8998956eb3b844d04b01ac3c66505f6678d4",
+      "sha256": "162c1ff528781efa8dba6626ac20ba6861576df4c96bfb23723fada1c42b230c"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-20.scv",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-20.scv",
+      "git_blob": "8cfc2d81347955e4be28fb7930a3755a4e506e34",
+      "sha256": "5ed8c36f487498f4a1f1b5bc05b9ed1ecf8aaba432c4fc9feab527e4ea1720e8"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-20.wav",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-20.wav",
+      "git_blob": "aaaa5716afe05ff0e9281e00b85f2c93471ab597",
+      "sha256": "2573850eb7dca230ab5ab15a2cee4a41b2071220d95488345172eeec7b0db9f9"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-21.scv",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-21.scv",
+      "git_blob": "db391edabe636f75e360b1c2370191e7f043092b",
+      "sha256": "e228be68136805d67705360e2ee7af169dab4b4596f51bb6bef25448340f783e"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-21.wav",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-21.wav",
+      "git_blob": "33d4c0275af11e998b0295d582ee6f88962a6a0b",
+      "sha256": "5108681447873375f1bd53d0924ba2e34447564d76f462227fb603f3d8f2469a"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-22.scv",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-22.scv",
+      "git_blob": "d59155f4841adff45b9efc04e1497beba0af8076",
+      "sha256": "81d5b805e11f2abd44afc72fd2abaca213d35dc8c279e7025af36a1ab7f50e90"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-22.wav",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-22.wav",
+      "git_blob": "6a4b287c58b747367080f02b580e0b3f31fde4de",
+      "sha256": "af365cbcadc2cd77e4b8ad0f4665af4dd732690740100c122a7ad045d005e4ce"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-23.scv",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-23.scv",
+      "git_blob": "75b67e8b8de2f48d373385ebfd048730d8dc590d",
+      "sha256": "9f92a29976c926295797db7f101185e9cd02b7c990832ea34e24a777df077e9d"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-23.wav",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-23.wav",
+      "git_blob": "77dd46d38b6a0255dcd9e3b2e73e24797c0b64ea",
+      "sha256": "f607e5861f6340e97a549ceeeaa96a693954601b1cc5223dd158dae289585308"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-24.scv",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-24.scv",
+      "git_blob": "812c4193ec76c0b5cb8f27be300c2400f844d7b7",
+      "sha256": "6df174f96f6186af4da09afe41d56973b3da7d3296cb315dde4f6db437520abc"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-24.wav",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-24.wav",
+      "git_blob": "e3f2017133d4ebdfcb19d2660d9102a77408e7bf",
+      "sha256": "d82369cbf34b377c4872ec4af062b226aa77c18a8e783b44fac086fb75f07dae"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-25.scv",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-25.scv",
+      "git_blob": "c20d2cbe156918027062a2ffc1859494348b467f",
+      "sha256": "117c128cbf7abf6497e09afea4caf315a78c483dbe29f8dc3388456838e84697"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-25.wav",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-25.wav",
+      "git_blob": "a61bb79c4028e7e73038ec62fb708d674cefb357",
+      "sha256": "faa1ad3f2e66659fc9f63776b8820f0afbe3fb4958a3da9bf0be52db1d983f3a"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-26.scv",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-26.scv",
+      "git_blob": "198e12457e72b226de8a044d14c6460ef5534fc5",
+      "sha256": "178008bd600d80670f3a19da8e34b56f0ecd83f3ad600d0dd27d20b6012dd561"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-26.wav",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-26.wav",
+      "git_blob": "bc425b050971000759834360b4a817d38daf9dd7",
+      "sha256": "d3bc4941e32cdb4b789b59ad2de1a96a1fedd12a9f30e9731a8a501e87b5514d"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-27.scv",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-27.scv",
+      "git_blob": "fb6c7155ca8cc07c0eb3e7dec008f2162909224f",
+      "sha256": "d4ff72707cee5ab40d7427978f60c7036bbe4549512343e1d01e36d9c1994974"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-27.wav",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-27.wav",
+      "git_blob": "98307baf95a971a8269088ca10064bf1b27dacd0",
+      "sha256": "787541ec4e9424cb2f754905d920213cc4ab89024601d2b2d259b035b12f041a"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-28.scv",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-28.scv",
+      "git_blob": "128dbdf5052be053fef04d8eb00d651504c87467",
+      "sha256": "9c2cb73155c4ae9cc103ef8b56603210552d358368b4e8de1be7cacbbbe78405"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-28.wav",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-28.wav",
+      "git_blob": "05c13d3d0d908832da1bb5e738c7a4349696a38c",
+      "sha256": "0f4fcc392c64b0e96c06dcc8e1eda240a1fada1ff5b51f8ea606339ab1e7810b"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-29.scv",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-29.scv",
+      "git_blob": "f2eeebb69ae119d173d16d1db578776ccdb6ec77",
+      "sha256": "4c0573592d91988f0cac6384d11baa0bdc7c6a9bf5f0065c408ebfdda6f06e56"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-29.wav",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-29.wav",
+      "git_blob": "945cf0580ee8574a08b0aca6d498090382611f26",
+      "sha256": "dc68d7c5ee7ad02c5c5d9c7dd5b30e8d1205516826438a639c44d51636187192"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-30.scv",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-30.scv",
+      "git_blob": "68bfd7bbcdf852f9be2342a6eedb08453658d106",
+      "sha256": "c704c09babcba5b4a2ebe4d53b936aa85c41310f5b4948eaafe14e5fc1b92a3f"
+    },
+    {
+      "path": "/home/ascend-audio-eval-20261020/data/ten-vad/testset-audio-30.wav",
+      "split": "test",
+      "source_url": "https://raw.githubusercontent.com/TEN-framework/ten-vad/d68ab71c8d5fbd8f98e97ae7c9986af76b5d72b1/testset/testset-audio-30.wav",
+      "git_blob": "f8154e74406fa9b9a49cac1a938cdf84b4abb6a2",
+      "sha256": "af0fc39db6080f65d5b8c9a19aeca04a19d60c503a06fc6f3a875e64e7ac7ebf"
+    }
+  ]
+}

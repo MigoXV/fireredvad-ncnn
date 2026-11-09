@@ -16,7 +16,7 @@ from google.protobuf.json_format import MessageToDict
 import fireredvad_ncnn.proto.ux_vad_pb2 as pb
 import fireredvad_ncnn.proto.ux_vad_pb2_grpc as pb_grpc
 from fireredvad_ncnn.engine.client import EngineClient
-from fireredvad_ncnn.engine.protocol import (
+from fireredvad_ncnn.engine.errors import (
     DeadlineExceededError,
     EngineError,
     FailedPreconditionError,
